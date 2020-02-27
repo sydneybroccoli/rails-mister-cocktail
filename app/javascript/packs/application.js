@@ -18,3 +18,5 @@
 console.log('Hello World from Webpacker')
 
 import 'bootstrap';
+
+// JS FOR NEW_COCKTAIL_FORM

@@ -8,11 +8,8 @@ Dose.destroy_all
 
 puts 'Creating new database...'
 # SEED INGREDIENTS W/ JSON LIST
-URL = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-data = JSON.parse(open(URL).read)
-ingredients = []
-data['drinks'].each do |item|
-  ingredients << item['strIngredient1']
+Ingredient::INGREDIENTS.each do |item|
+  Ingredient.create(name: item)
 end
 
 15.times do
@@ -22,8 +19,7 @@ end
 
   3.times do
     # CREATE INGREDIENTS
-    ingredient = Ingredient.new(name: ingredients.sample)
-    ingredient.save
+    ingredient = Ingredient.all.uniq.sample
 
     # CREATE DOSE
     # add corresponding ingredient and cocktail ID

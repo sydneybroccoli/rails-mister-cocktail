@@ -1,0 +1,65 @@
+<%= javascript_include_tag('') %>
+
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name %>
+<div class="outer-container" id="new-cocktail-container">
+  <div class="d-flex" >
+    <div class="input-dose">
+      <%= f.input :doses,
+        input_html: { value: '' },
+        label: 'Dose' %>
+    </div>
+    <div class="input-ingredient flex-grow-1 mx-2">
+      <%= f.input :ingredients,
+        collection: Ingredient::INGREDIENTS.sort,
+        label: 'Ingredient' %>
+    </div>
+    <div class="remove align-self-end pb-4">
+      <%= link_to icon('fas', 'minus-circle',
+        class: 'fa-lg text-danger',
+        style: 'font-size:20px;opacity:0.5;',
+        id: 'removeButton'), '#' %>
+    </div>
+  </div>
+  <div class="d-flex" id="new-cocktail-container">
+    <div class='input-dose'>
+      <%= f.input :doses, input_html: { value: '' }, label: false %>
+    </div>
+    <div class='input-ingredient flex-grow-1 mx-2'>
+      <%= f.input :ingredients, collection: Ingredient::INGREDIENTS.sort, label: false %>
+    </div>
+    <div class='remove align-self-end pb-4'>
+      <%= link_to icon('fas', 'minus-circle', class: 'fa-lg text-danger', style: 'font-size:20px;opacity:0.5;', id: 'removeButton'), '#' %>
+    </div>
+  </div>
+  <div class="d-flex" id="new-cocktail-container">
+    <div class='input-dose'>
+      <%= f.input :doses, input_html: { value: '' }, label: false %>
+    </div>
+    <div class='input-ingredient flex-grow-1 mx-2'>
+      <%= f.input :ingredients, collection: Ingredient::INGREDIENTS.sort, label: false %>
+    </div>
+    <div class='remove align-self-end pb-4'>
+      <%= link_to icon('fas', 'minus-circle', class: 'fa-lg text-danger', style: 'font-size:20px;opacity:0.5;', id: 'removeButton'), '#' %>
+    </div>
+  </div>
+</div>
+  <%= link_to icon('fas', 'plus',
+        class: 'fa-lg text-success',
+        style: 'font-size:20px;opacity:0.5;',
+        id: 'addButton') + ' ADD ANOTHER INGREDIENT', '#' %>
+  <br><br>
+  <div class="submit d-flex justify-content-center">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<!-- <script>
+  const container = document.querySelector('#new-cocktail-container');
+const addButton = document.querySelector('#removeButton');
+
+addButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  container.insertAdjacentHTML("beforeend", '<p>TEST<p>');
+})
+</script> -->
