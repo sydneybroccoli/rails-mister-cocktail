@@ -1,21 +1,26 @@
-<% drink_placeholder = 'https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' %>
-
 <div class="cocktail-container container">
   <div class="card m-3 mx-auto w-75" style="width: 18rem;">
-    <%= image_tag drink_placeholder, alt:'placeholder', width: '100%' %>
+    <% if @cocktail.thumbnail_url.nil? %>
+      <%= image_tag 'https://images.pexels.com/photos/605408/pexels-photo-605408.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', alt:'placeholder', width: '100%' %>
+    <% else %>
+      <%= image_tag @cocktail.thumbnail_url, alt:'placeholder', width: '100%' %>
+    <% end %>
 
 
     <div class="card-body">
       <h5 class="card-title"><%= @cocktail.name %></h5>
-      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna et pharetra pharetra massa massa ultricies mi quis hendrerit.</p>
+      <p><em><%= @cocktail.alcoholic %> <%= @cocktail.category %></em></p>
+      <p></p>
+      <p>GLASS: <%= @cocktail.glass %></p>
+      <p class="card-text"><%= @cocktail.instructions %></p>
     </div>
     <ul class="list-group list-group-flush">
 
-      <% @cocktail.ingredients.each do |ingredient| %>
+      <% @cocktail.doses.each do |dose| %>
       <li class="list-group-item d-flex justify-content-between">
         <div class="info">
-          <%= ingredient.doses[0].description %>
-          <span><strong><%= ingredient.name %></strong></span>
+          <%= dose.description %>
+          <span><strong><%= Ingredient.find(dose.ingredient_id).name %></strong></span>
         </div>
         <div class="delete-icon">
           <%= link_to icon('fas', 'minus-circle',
@@ -24,7 +29,7 @@
               id: 'removeButton'),
             cocktail_dose_path(
               cocktail_id: @cocktail.id,
-              id: ingredient.doses[0].id ),
+              id: dose.id ),
             method: :delete %>
         </div>
       </li>

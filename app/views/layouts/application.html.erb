@@ -13,15 +13,43 @@
   </head>
 
   <body>
-    <div class="navbar navbar-expand-lg navbar-light bg-dark">
-      <div class="navbar-link">
-          <%= link_to 'ALL COCKTAILS', cocktails_path %>
-      </div>
-      <div class="navbar-link">
-        <%= link_to 'NEW COCKTAIL', new_cocktail_path %>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-dark">
+      <%= link_to icon('fas', 'cocktail',
+            class: 'fa-lg text-light navbar-brand text-left',
+            style: 'font-size:30px;',
+            id: 'navbarIcon'), cocktails_path
+      %>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+<!--           <li class="nav-item active">
+            <%#= link_to 'ALL COCKTAILS', cocktails_path, class: "dropdown-item" %>
+          </li> -->
+          <li class="nav-item bg-light">
+            <%= link_to 'NEW COCKTAIL', new_cocktail_path, class: "dropdown-item" %>
+          </li>
+        </ul>
       </div>
     </div>
+
     <%= yield %>
+
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+      </div>
+    </div>
 
     <%= javascript_include_tag "application" %>
     <%= javascript_pack_tag "application" %>

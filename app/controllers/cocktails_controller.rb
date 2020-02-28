@@ -13,6 +13,10 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
+    if @cocktail.thumbnail_url.empty?
+      @cocktail.thumbnail_url = 'https://images.pexels.com/photos/613037/pexels-photo-613037.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'
+    end
+    raise
     if @cocktail.save
       redirect_to cocktail_path(@cocktail.id)
     else
@@ -23,6 +27,6 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :category, :alcoholic, :glass, :thumbnail_url, :instructions, :dose, :ingredient)
   end
 end

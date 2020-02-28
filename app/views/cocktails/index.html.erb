@@ -1,13 +1,10 @@
-<% drink_placeholder = 'https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' %>
-
 <div class="cocktails-container container d-flex flex-wrap justify-content-around">
   <% @cocktails.each do |cocktail| %>
     <div class="card m-3" style="width: 18rem;">
-      <%= image_tag drink_placeholder, alt:'placeholder', width: '100%' %>
+      <%= image_tag cocktail.thumbnail_url, alt:"#{cocktail.name} image thumbnail", width: '100%' %>
       <div class="card-body text-center">
         <p class="card-text"><%= link_to cocktail.name, cocktail_path(cocktail.id) %></p>
       </div>
     </div>
   <% end %>
 </div>
-
