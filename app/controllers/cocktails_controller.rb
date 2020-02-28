@@ -16,11 +16,17 @@ class CocktailsController < ApplicationController
     if @cocktail.thumbnail_url.empty?
       @cocktail.thumbnail_url = 'https://images.pexels.com/photos/613037/pexels-photo-613037.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'
     end
-    raise
     if @cocktail.save
       redirect_to cocktail_path(@cocktail.id)
     else
       render :new
+    end
+  end
+
+  def new_dose
+    respond_to do |format|
+      format.html
+      format.javascripts
     end
   end
 

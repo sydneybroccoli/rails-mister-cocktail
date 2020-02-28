@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     resources :doses, only: [:new, :create, :destroy]
   end
   # resources :doses, only: :destroy
+
+  get 'cocktails/:id/new_dose', as: :new_dose, to: 'cocktails#new_dose'
 end

@@ -18,5 +18,7 @@
 console.log('Hello World from Webpacker')
 
 import 'bootstrap';
-
-// JS FOR NEW_COCKTAIL_FORM
+import 'jquery';
+import 'popper';
+import 'turbolinks';
+import 'new_dose';
