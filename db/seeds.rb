@@ -14,9 +14,13 @@ puts 'Creating new database...'
   puts "Fetching cocktail..."
   data = JSON.parse(open(url).read)
   tmp = data['drinks'].first
+  puts "\tCreating #{tmp['strDrink']}!"
 
   # SKIP IF NO COCKTAIL IS FOUND
   next if tmp.nil?
+
+  # SKIP IF COCKTAIL EXISTS IN DB
+  next if Cocktail.where(name: tmp['strDrink']).exists?
 
   # REMOVE ALL NULL VALUES
   tmp.delete_if { |_key, value| value.nil? }
