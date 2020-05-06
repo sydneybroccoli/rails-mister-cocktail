@@ -1,0 +1,34 @@
+.navigation {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: $main-brand;
+}
+
+.navigation ul {
+    padding: 0.25em;
+    display: flex;
+    align-items: center;
+
+  a {
+    color: $dark-shade;
+  }
+
+  a:hover {
+    opacity: 0.75;
+  }
+}
+
+.header ul { justify-content: space-between; }
+.footer ul {
+  justify-content: center;
+
+  li {
+    padding: 0.25em 0.5em;
+  }
+  i {
+    color: $light-shade;
+    font-size: 30px;
+    opacity: 0.5;
+  }
+}

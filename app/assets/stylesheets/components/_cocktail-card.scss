@@ -1,0 +1,40 @@
+.cocktail-card {
+  height: 250px;
+  width: 250px;
+  margin: 0.25em;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.cocktail-img {
+  img {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+.cocktail-info {
+  position: absolute;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: transparent;
+  }
+}
+
+.cocktail-card:hover {
+  .cocktail-img img {
+    opacity: 0.25;
+  }
+  .cocktail-info a {
+    color: $dark-accent;
+  }
+}

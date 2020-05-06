@@ -1,18 +1,25 @@
-<div class="navigation">
-  <%= render 'shared/navbar' %>
-</div>
+<section class="cocktails-grid">
+  <div class="nav-header">
+    <%= render 'shared/navbar' %>
+  </div>
 
-<div class="cocktails-container container d-flex flex-wrap justify-content-around">
-  <% @cocktails.each do |cocktail| %>
-    <div class="card m-3" style="width: 18rem;">
-      <%= image_tag cocktail.thumbnail_url, alt:"#{cocktail.name} image thumbnail", width: '100%' %>
-      <div class="card-body text-center">
-        <p class="card-text"><%= link_to cocktail.name, cocktail_path(cocktail.id) %></p>
+  <div class="cocktails-container container d-flex flex-wrap justify-content-around">
+
+    <% @cocktails.each do |cocktail| %>
+      <div class="cocktail-card">
+        <div class="cocktail-img">
+          <%= image_tag cocktail.thumbnail_url, alt:"#{cocktail.name} image thumbnail" %>
+        </div>
+
+        <div class="cocktail-info">
+          <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
-<div class="navigation">
-  <%= render 'shared/footer' %>
-</div>
+  <div class="nav-footer">
+    <%= render 'shared/footer' %>
+  </div>
+</section>
+

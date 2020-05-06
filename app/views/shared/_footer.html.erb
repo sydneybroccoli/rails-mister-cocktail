@@ -1,12 +1,29 @@
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
-  </div>
+<div class="navigation footer">
+  <ul class="list-inline">
+    <li>
+      <%= link_to icon('fab', 'github',
+      class: 'fa-lg footer-social',
+          id: 'github-social'), root_path %>
+    </li>
+    <li>
+      <%= link_to icon('fab', 'instagram',
+          class: 'fa-lg footer-social',
+          id: 'insta-social'), root_path %>
+    </li>
+    <li>
+      <%= link_to icon('fab', 'facebook',
+          class: 'fa-lg footer-social',
+          id: 'fb-social'), root_path %>
+    </li>
+    <li>
+      <%= link_to icon('fab', 'twitter',
+          class: 'fa-lg footer-social',
+          id: 'twitter-social'), root_path %>
+    </li>
+    <li>
+     <%= link_to icon('fab', 'linkedin',
+          class: 'fa-lg footer-social',
+          id: 'li-social'), root_path %>
+    </li>
+  </ul>
 </div>
