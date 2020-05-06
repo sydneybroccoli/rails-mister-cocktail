@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # ROOT
-  root to: 'cocktails#index'
+  root to: 'cocktails#home'
   # COCKTAILS (index, show, new, create)
   resources :cocktails, only: [:index, :show, :new, :create] do
     # INGREDIENTS (nothing)

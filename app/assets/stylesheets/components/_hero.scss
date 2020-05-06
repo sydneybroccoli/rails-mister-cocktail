@@ -1,0 +1,58 @@
+$main-font-color: $light-shade;
+$link-font-color: $dark-shade;
+
+$hero-img-url: asset-path('hero-img.jpg');
+
+.hero {
+  // SIZING
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+
+  // DISPLAY
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // TEXT STYLING
+  text-align: center;
+
+  // BACKGROUND STYLING
+  background-image: linear-gradient(
+    rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url($hero-img-url);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  // HEADER STYLING
+  h1 {
+    font-size: 5em !important;
+    color: $main-font-color !important;
+  }
+
+  // PARAGRAPH STYLING
+  p {
+    font-size: 1.5em !important;
+    letter-spacing: 0.5em !important;
+    color: $main-font-color !important;
+  }
+
+  // LINKS STYLING
+  a {
+    text-decoration: none;
+    font-size: 1.24em !important;
+
+    // BUTTON STYLING
+    background-color: $light-shade;
+    border: solid $light-shade;
+    color: $link-font-color;
+    padding: 0 0.5em;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
