@@ -1,4 +1,6 @@
 .cocktails-grid {
+  height: 100vh;
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
@@ -9,12 +11,19 @@
 
   .nav-header {
     grid-area: header;
-     }
+  }
   .cocktails-container {
     grid-area: content;
-    overflow: auto;
+    overflow: scroll;
   }
   .nav-footer {
     grid-area: footer;
   }
+}
+
+.cocktails-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }

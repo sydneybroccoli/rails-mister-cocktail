@@ -1,12 +1,11 @@
 .navigation {
   width: 100%;
-  padding: 0;
+  padding: 0.25em 0;
   margin: 0;
   background-color: $main-brand;
 }
 
 .navigation ul {
-    padding: 0.25em;
     display: flex;
     align-items: center;
 
