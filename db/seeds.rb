@@ -8,34 +8,33 @@ Dose.destroy_all
 
 puts 'Creating new database...'
 
-("a".."z").each do |letter|
+25.times do
   # PARSE JSON
-  url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=#{letter}"
-  puts "Fetching all '#{letter}' cocktails..."
+  url = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+  puts "Fetching cocktail..."
   data = JSON.parse(open(url).read)
-  cocktails = data['drinks']
+  tmp = data['drinks'].first
 
-  # SKIP IF NO COCKTAILS ARE FOUND
-  next if cocktails.nil?
+  # SKIP IF NO COCKTAIL IS FOUND
+  next if tmp.nil?
 
-  # ITERATE THROUGH EACH COCKTAIL
-  cocktails.each do |cocktail|
-    # REMOVE ALL NULL VALUES
-    cocktail.delete_if { |_key, value| value.nil? }
-    # CREATE COCKTAIL INSTANCE
-    drink = Cocktail.new(
-      name: cocktail['strDrink'],
-      category: cocktail['strCategory'],
-      alcoholic: cocktail['strAlcoholic'],
-      glass: cocktail['strGlass'],
-      instructions: cocktail['strInstructions'],
-      thumbnail_url: cocktail['strDrinkThumb']
+  # REMOVE ALL NULL VALUES
+  tmp.delete_if { |_key, value| value.nil? }
+
+  # CREATE COCKTAIL INSTANCE
+  cocktail = Cocktail.new(
+    name: tmp['strDrink'],
+    category: tmp['strCategory'],
+    alcoholic: tmp['strAlcoholic'],
+    glass: tmp['strGlass'],
+    instructions: tmp['strInstructions'],
+    thumbnail_url: tmp['strDrinkThumb'] + '/preview'
     )
-    drink.save!
+  cocktail.save!
 
-    # FIND ALL INGREDIENTS AND DOSES
-    ingredients = cocktail.select { |key, value| key.match(/strIngredient\d+/) && !value.blank? }.values
-    doses = cocktail.select { |key, value| key.match(/strMeasure\d+/) && !value.blank? }.values
+  # FIND ALL INGREDIENTS AND DOSES
+  ingredients = tmp.select { |key, value| key.match(/strIngredient\d+/) && !value.blank? }.values
+  doses = tmp.select { |key, value| key.match(/strMeasure\d+/) && !value.blank? }.values
 
     doses << '...' while ingredients.count > doses.count
 
@@ -56,15 +55,14 @@ puts 'Creating new database...'
       dose = Dose.new(
         description: doses[i],
         ingredient_id: ingredient.id,
-        cocktail_id: drink.id
+        cocktail_id: cocktail.id
       )
       dose.save!
       i += 1
     end
 
-    # SAVE COCKTAIL
-    drink.save!
-  end
+  # SAVE COCKTAIL
+  cocktail.save!
 end
 
 # SEED INGREDIENTS W/ JSON LIST
