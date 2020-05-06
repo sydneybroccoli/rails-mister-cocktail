@@ -1,22 +1,17 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-dark">
-  <%= link_to icon('fas', 'cocktail',
-        class: 'fa-lg text-light navbar-brand text-left',
-        style: 'font-size:30px;',
-        id: 'navbarIcon'), cocktails_path
-  %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-<!--           <li class="nav-item active">
-        <%#= link_to 'ALL COCKTAILS', cocktails_path, class: "dropdown-item" %>
-      </li> -->
-      <li class="nav-item bg-light">
-        <%= link_to 'NEW COCKTAIL', new_cocktail_path, class: "dropdown-item" %>
-      </li>
-    </ul>
-  </div>
+<div class="navigation">
+  <ul class="list-inline mr-auto">
+    <li class="nav-item" id="nav-all-cocktails">
+      <%= link_to 'ALL COCKTAILS', cocktails_path,
+        class: "dropdown-item" %>
+    </li>
+    <li class="nav-item" id="nav-home">
+      <%= link_to icon('fas', 'glass-whiskey',
+          class: 'fa-lg navbar-brand',
+          id: 'navBrand'), root_path
+      %>
+    </li>
+    <li class="nav-item" id="nav-new-cocktail">
+      <%= link_to 'NEW COCKTAIL', new_cocktail_path, class: "dropdown-item" %>
+    </li>
+   </ul>
 </div>
