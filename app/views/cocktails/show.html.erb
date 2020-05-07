@@ -1,45 +1,67 @@
-<div class="cocktail-container container">
-  <div class="card m-3 mx-auto w-75" style="width: 18rem;">
-    <% if @cocktail.thumbnail_url.nil? %>
-      <%= image_tag 'https://images.pexels.com/photos/605408/pexels-photo-605408.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', alt:'placeholder', width: '100%' %>
-    <% else %>
-      <%= image_tag @cocktail.thumbnail_url, alt:'placeholder', width: '100%' %>
-    <% end %>
+<section class="cocktail-grid">
+  <div class="nav-header">
+    <%= render 'shared/navbar' %>
+  </div>
 
-
-    <div class="card-body">
-      <h5 class="card-title"><%= @cocktail.name %></h5>
-      <p><em><%= @cocktail.alcoholic %> <%= @cocktail.category %></em></p>
-      <p></p>
-      <p>GLASS: <%= @cocktail.glass %></p>
-      <p class="card-text"><%= @cocktail.instructions %></p>
-    </div>
-    <ul class="list-group list-group-flush">
-
-      <% @cocktail.doses.each do |dose| %>
-      <li class="list-group-item d-flex justify-content-between">
-        <div class="info">
-          <%= dose.description %>
-          <span><strong><%= Ingredient.find(dose.ingredient_id).name %></strong></span>
-        </div>
-        <div class="delete-icon">
-          <%= link_to icon('fas', 'minus-circle',
-              class: 'fa-lg text-danger',
-              style: 'font-size:20px;opacity:0.5;',
-              id: 'removeButton'),
-            cocktail_dose_path(
-              cocktail_id: @cocktail.id,
-              id: dose.id ),
-            method: :delete %>
-        </div>
-      </li>
+  <div class="cocktail-container container">
+    <div class="cocktail-img">
+      <% if @cocktail.thumbnail_url.nil? %>
+        <%= image_tag 'https://images.pexels.com/photos/605408/pexels-photo-605408.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+          alt:'placeholder thumbnail' %>
+      <% else %>
+        <%= image_tag @cocktail.thumbnail_url,
+          alt:"#{@cocktail.name} cocktail thumbnail" %>
       <% end %>
+    </div>
 
-    </ul>
-    <div class="card-body text-center">
+    <div class="cocktail-name">
+      <h3 class="font-display"><%= @cocktail.name %></h3>
+    </div>
 
-      <%= link_to 'ADD NEW INGREDIENT', new_cocktail_dose_path(@cocktail.id) %>
+    <div class="cocktail-alcoholic">
+      <p class="body-font"><%= @cocktail.alcoholic %></p>
+    </div>
+
+    <div class="cocktail-glass">
+      <p class="body-font"><%= @cocktail.glass %></p>
+    </div>
+
+    <div class="cocktail-instructions">
+      <p class="body-font"><%= @cocktail.instructions %></p>
+    </div>
+
+      <div class="cocktail-ingredients">
+      <ul class="list-group list-group-flush">
+        <% @cocktail.doses.each do |dose| %>
+        <li class="list-group-item d-flex justify-content-between">
+          <div class="info">
+            <%= dose.description %>
+            <span><strong><%= Ingredient.find(dose.ingredient_id).name %></strong></span>
+          </div>
+          <div class="delete-icon">
+            <%= link_to icon('fas', 'minus-circle',
+                class: 'cocktail-ingredient-rm fa-lg text-danger',
+                style: 'font-size:20px;opacity:0.5;',
+                id: 'removeButton'),
+              cocktail_dose_path(
+                cocktail_id: @cocktail.id,
+                id: dose.id ),
+              method: :delete %>
+          </div>
+        </li>
+        <% end %>
+        <li class="list-group-item d-flex justify-content-center">
+          <%= link_to icon('fas', 'plus-circle',
+              class: 'cocktail-ingredient-add fa-lg text-success',
+              style: 'font-size:20px;opacity:0.5;',
+              id: 'addButton'),
+            new_cocktail_dose_path(@cocktail.id) %>
+        </li>
+      </ul>
     </div>
   </div>
-</div>
-<!--  -->
+
+  <div class="nav-footer">
+    <%= render 'shared/footer' %>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+.cocktail-grid {
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header'
+    'content'
+    'footer';
+
+  .nav-header {
+    grid-area: header;
+  }
+  .cocktail-container {
+    grid-area: content;
+    overflow: scroll;
+  }
+  .nav-footer {
+    grid-area: footer;
+  }
+}
+
+.cocktail-container {
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+
+  .cocktail-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  .cocktail-name {
+    font-family: $display-font;
+    text-align: center;
+    padding-left: 0.25em;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 2.5em;
+  }
+  .cocktail-alcoholic {
+    text-align: center;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+  .cocktail-glass {
+    text-transform: uppercase;
+  }
+  .cocktail-instructions {
+
+  }
+  .cocktail-ingredients {
+    text-align: center;
+  }
+}
+
+.cocktail-ingredients {
+  .cocktail-ingredient-add {
+    font-size: 1.5em;
+    color: $dark-shade;
+  }
+}
