@@ -27,6 +27,11 @@ $hero-img-url: asset-path('hero-img.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
 
+  // COMMON STYLING
+  h1, p {
+    margin: 0 0.25em;
+  }
+
   // HEADER STYLING
   h1 {
     font-size: 5em !important;
