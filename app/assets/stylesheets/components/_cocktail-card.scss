@@ -20,7 +20,7 @@
   position: absolute;
   text-align: center;
 
-  a {
+  p {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.25em;
@@ -34,7 +34,7 @@
   .cocktail-img img {
     opacity: 0.25;
   }
-  .cocktail-info a {
+  .cocktail-info p {
     color: $dark-accent;
   }
 }

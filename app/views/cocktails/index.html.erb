@@ -6,15 +6,17 @@
   <div class="cocktails-container container">
 
     <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail.id) do %>
       <div class="cocktail-card">
         <div class="cocktail-img">
           <%= image_tag cocktail.thumbnail_url, alt:"#{cocktail.name} image thumbnail" %>
         </div>
 
         <div class="cocktail-info">
-          <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+          <p><%= cocktail.name %></p>
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 
