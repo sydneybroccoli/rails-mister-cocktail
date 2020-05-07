@@ -1,16 +1,33 @@
 <%= javascript_include_tag('') %>
 
 <%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name,
+    label: false,
+    input_html: {
+      class: 'ncf-name',
+      placeholder: 'COCKTAIL NAME' } %>
   <%= f.input :thumbnail_url,
-    label: 'Thumbnail URL' %>
-  <%= f.input :category,
-    collection: ['Shot', 'Cocktail', 'Other'] %>
+    label: false,
+    input_html: {
+      class: 'ncf-thumbnail',
+      placeholder: 'COCKTAIL THUMBNAIL URL' } %>
   <%= f.input :alcoholic,
-    collection: ['Alcoholic', 'Non-Alcoholic'] %>
-  <%= f.input :glass %>
+    label: false,
+    collection: [['Alcoholic', '1'], ['Non-Alcoholic', '2']],
+    input_html: {
+      class: 'ncf-alcoholic' } %>
+  <%= f.input :glass,
+    label: false,
+    input_html: {
+      class: 'ncf-glass',
+      placeholder: 'COCKTAIL GLASS TYPE' } %>
   <%= f.input :instructions,
-    as: :text %>
-  <%= f.submit %>
+    as: :text,
+    label: false,
+    input_html: {
+      class: 'ncf-instructions',
+      placeholder: 'COCKTAIL INSTRUCTIONS...' } %>
+  <%= f.button :submit,
+    input_html: { class: 'ncf-submit' } %>
 <% end %>
 

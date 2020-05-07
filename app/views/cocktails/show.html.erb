@@ -19,18 +19,18 @@
     </div>
 
     <div class="cocktail-alcoholic">
-      <p class="body-font"><%= @cocktail.alcoholic %></p>
+      <p class="font-body"><%= @cocktail.alcoholic %></p>
     </div>
 
     <div class="cocktail-glass">
-      <p class="body-font"><%= @cocktail.glass %></p>
+      <p class="font-body"><%= @cocktail.glass %></p>
     </div>
 
     <div class="cocktail-instructions">
-      <p class="body-font"><%= @cocktail.instructions %></p>
+      <p class="font-body"><%= @cocktail.instructions %></p>
     </div>
 
-      <div class="cocktail-ingredients">
+    <div class="cocktail-ingredients">
       <ul class="list-group list-group-flush">
         <% @cocktail.doses.each do |dose| %>
         <li class="list-group-item d-flex justify-content-between">
