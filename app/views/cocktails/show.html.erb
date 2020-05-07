@@ -55,11 +55,13 @@
             class: 'fa-lg text-success',
             style: 'font-size:20px;opacity:0.5;',
             id: 'addButton') + ' ADD ANOTHER INGREDIENT',
-            new_cocktail_dose_path(@cocktail.id) %>
+            new_cocktail_dose_path(@cocktail.id),
+            id: '' %>
         </li>
       </ul>
     </div>
   </div>
+
 
   <div class="nav-footer">
     <%= render 'shared/footer' %>

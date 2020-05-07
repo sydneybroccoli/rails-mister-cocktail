@@ -15,10 +15,23 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
+console.log('Hello World from Webpacker');
 
-import 'bootstrap';
+// IMPORT LIBRARIES
 import 'jquery';
-import 'popper';
-import 'turbolinks';
-import 'new_dose';
+// import 'popper'; - NOT WORKING
+// import 'turbolinks'; - NOT WORKING
+import 'bootstrap';
+
+// IMPORT SCRIPTS
+import { doseModalAction } from '../scripts/modal.js';
+
+// EXECUTE SCRIPTS
+  // DEVELOPMENT MODE?
+if (process.env.NODE_ENV !== 'production') {
+  console.log('LOOKS LIKE WE ARE IN DEVELOPMENT MODE...');
+}
+  // RUN FUNCTIONS
+document.addEventListener("DOMContentLoaded", function () {
+  doseModalAction();
+});
