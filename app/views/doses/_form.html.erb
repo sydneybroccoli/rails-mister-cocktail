@@ -1,29 +1,38 @@
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-<div class="outer-container" id="new-dose-container">
-  <div class="d-flex" >
-    <div class="input-dose">
-      <%= f.input :description,
-        input_html: { value: '' },
-        label: 'Dose' %>
-    </div>
-    <div class="input-ingredient flex-grow-1 mx-2">
-      <%= f.association :ingredient,
-        collection: Ingredient.order('name'),
-        label: 'Ingredient' %>
-    </div>
-    <div class="remove align-self-end pb-4">
+<div class="new-ingredient-form">
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+  <div class="cocktail-ingredient-form">
+    <div class="cocktail-ingredient-row">
+      <div class="nif-dose">
+        <%= f.input :description,
+          label: 'DOSE',
+          placeholder: '1.0 CUPS...',
+          input_html: {
+            value: '',
+            id: '' } %>
+      </div>
+      <div class="nif-ingredient">
+        <%= f.association :ingredient,
+          label: 'INGREDIENT',
+          collection: Ingredient.order('name'),
+          input_html: {
+            id: '' } %>
+      </div>
       <%= link_to icon('fas', 'minus-circle',
-        class: 'fa-lg text-danger',
-        style: 'font-size:20px;opacity:0.5;',
-        id: 'removeButton'), '#' %>
+            class: 'fa-lg text-danger',
+            style: 'font-size:20px;opacity:0.5;',
+            id: 'removeButton'),
+        '#',
+        class: 'nif-rmBtn' %>
     </div>
+    <%= link_to icon('fas', 'plus',
+          class: 'fa-lg text-success nif-addBtn',
+          style: 'font-size:20px;opacity:0.5;',
+          id: 'addButton') + ' ADD ANOTHER INGREDIENT',
+          '#' %>
   </div>
-  <%= link_to icon('fas', 'plus',
-        class: 'fa-lg text-success',
-        style: 'font-size:20px;opacity:0.5;',
-        id: 'addButton') + ' ADD ANOTHER INGREDIENT', '#' %>
-  <br><br>
-  <div class="submit d-flex justify-content-center">
-    <%= f.submit %>
+  <br>
+    <%= f.button :submit,
+    input_html: { class: 'nif-submit' } %>
   </div>
-<% end %>
+  <% end %>
+</div>

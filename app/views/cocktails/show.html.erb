@@ -51,10 +51,10 @@
         </li>
         <% end %>
         <li class="list-group-item d-flex justify-content-center">
-          <%= link_to icon('fas', 'plus-circle',
-              class: 'cocktail-ingredient-add fa-lg text-success',
-              style: 'font-size:20px;opacity:0.5;',
-              id: 'addButton'),
+          <%= link_to icon('fas', 'plus',
+            class: 'fa-lg text-success',
+            style: 'font-size:20px;opacity:0.5;',
+            id: 'addButton') + ' ADD ANOTHER INGREDIENT',
             new_cocktail_dose_path(@cocktail.id) %>
         </li>
       </ul>

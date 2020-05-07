@@ -1,3 +1,16 @@
-<div class="container">
-  <%= render 'form', dose: @dose, cocktail: @cocktail %>
-</div>
+<section class="hero" id="new-ingredient">
+  <div class="new-ingredient-container container">
+    <%= link_to '<< BACK TO HOME PAGE', root_path,
+      class: "nav-item" %>
+    <br><br>
+    <%= link_to '<< BACK TO ALL COCKTAILS', cocktails_path,
+      class: "nav-item" %>
+
+    <br><br><br>
+
+    <div class="new-ingredient-form container">
+      <%= render 'form', dose: @dose, cocktail: @cocktail %>
+    </div>
+  </div>
+</section>
+
