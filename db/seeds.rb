@@ -16,7 +16,7 @@ puts 'Creating new database...'
   tmp = data['drinks'].first
   puts "\tCreating #{tmp['strDrink']}!"
 
-  # SKIP IF NO COCKTIAIL OR IF COCKTAIL EXISTS IN DB
+  # SKIP IF NO COCKTAIL OR IF COCKTAIL EXISTS IN DB
   next if tmp.nil? || Cocktail.where(name: tmp['strDrink']).exists?
 
   # REMOVE ALL NULL VALUES FROM HASH
