@@ -3,7 +3,7 @@
 
 [<img src="https://img.shields.io/badge/VISIT WEBPAGE-000000.svg?&style=for-the-badge&logoColor=white" />](https://sydneybroccoli-mister-cocktail.herokuapp.com/)
 
-Soup of the Day is a basic online recipe book for cocktails.  There is account required - anyone can create, edit and delete cocktails.
+Soup of the Day is a basic online recipe book for cocktails.  There is no account required - anyone can create, edit and delete cocktails.
 
 ### RUBY VERSION:
 
