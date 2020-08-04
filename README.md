@@ -5,12 +5,12 @@
 
 Soup of the Day is a basic online recipe book for cocktails.  There is account required - anyone can create, edit and delete cocktails.
 
-#### RUBY VERSION:
+### RUBY VERSION:
 
 - RUBY: 2.6.5
 - RAILS: 5.2.4.1
 
-#### DEPENDENCIES:
+### DEPENDENCIES:
 
 -  @RAILS/WEBPACKER: 4.2.2
 - JQUERY: ^3.5.1
@@ -20,11 +20,11 @@ Soup of the Day is a basic online recipe book for cocktails.  There is account r
 *DEV DEPENDENCIES*
 - WEBPACK-DEV-SERVER: ^3.10.3
 
-#### CONFIGURATION:
+### CONFIGURATION:
 
 N/A
 
-#### DATABASE:
+### DATABASE:
 
 **SCHEMA DESIGN**
 
@@ -39,15 +39,15 @@ N/A
         - *if the cocktail does not already exist in the DB, it will be added, else a new cocktail is parsed*
     - API provides: name, category, alcoholic, glass, instructions, ingredients, doses, and thumbnail URL
 
-#### TEST SUITE:
+### TEST SUITE:
 
 N/A
 
-#### SERVICES:
+### SERVICES:
 
 N/A
 
-#### DEPLOYMENT:
+### DEPLOYMENT:
 
 - HEROKU
 
