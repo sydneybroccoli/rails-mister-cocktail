@@ -1,0 +1,75 @@
+$main-font-color: $light-shade;
+$link-font-color: $dark-shade;
+
+$hero-img-url: asset-path('hero-img.jpg');
+
+.hero-banner {
+  // SIZING
+  width: 100vw;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+
+  // DISPLAY
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // TEXT STYLING
+  text-align: center;
+
+  // BACKGROUND STYLING
+  background-image: linear-gradient(
+    rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url($hero-img-url);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  // COMMON STYLING
+  h1, p {
+    margin: 0 0.25em;
+  }
+
+  // HEADER STYLING
+  h1 {
+    font-size: 5em !important;
+    color: $main-font-color !important;
+  }
+
+  // PARAGRAPH STYLING
+  p {
+    font-size: 1.5em !important;
+    letter-spacing: 0.5em !important;
+    color: $main-font-color !important;
+  }
+
+  // LIST SYLING
+  ul, li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+  }
+
+  // LINKS STYLING
+  a {
+    text-decoration: none;
+    font-size: 1.24em !important;
+
+    // BUTTON STYLING
+    background-color: transparent;
+    border: solid transparent;
+    color: $main-font-color;
+    opacity: 0.5;
+    padding: 0 0.5em;
+
+    &:hover {
+      background-color: $light-shade;
+      border: solid $light-shade;
+      color: $link-font-color;
+      opacity: 0.75;
+    }
+  }
+}

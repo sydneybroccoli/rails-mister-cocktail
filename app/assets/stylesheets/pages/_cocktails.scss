@@ -1,29 +1,29 @@
-.cocktails-grid {
-  height: 100vh;
+// .cocktails-grid {
+//   height: 100vh;
 
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    'header'
-    'content'
-    'footer';
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-template-rows: auto 1fr auto;
+//   grid-template-areas:
+//     'header'
+//     'content'
+//     'footer';
 
-  .nav-header {
-    grid-area: header;
-  }
-  .cocktails-container {
-    grid-area: content;
-    overflow: scroll;
-  }
-  .nav-footer {
-    grid-area: footer;
-  }
-}
+//   .nav-header {
+//     grid-area: header;
+//   }
+//   .cocktails-container {
+//     grid-area: content;
+//     overflow: scroll;
+//   }
+//   .nav-footer {
+//     grid-area: footer;
+//   }
+// }
 
-.cocktails-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+// .cocktails-container {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: center;
+// }
