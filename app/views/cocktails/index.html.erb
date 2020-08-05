@@ -1,6 +1,6 @@
 <section class="cocktails-grid">
-  <div class="nav-banner">
-    <%= render 'shared/banner' %>
+  <div class="nav-header">
+    <%= render partial: 'shared/navbar', layout: 'layouts/banner' %>
   </div>
 
   <div class="cocktails-container container">
@@ -21,6 +21,6 @@
   </div>
 
   <div class="nav-footer">
-    <%= render 'shared/footer' %>
+    <%= render partial: 'shared/footer', layout: 'layouts/banner' %>
   </div>
 </section>
