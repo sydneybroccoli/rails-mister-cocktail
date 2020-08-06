@@ -5,7 +5,8 @@
 
   <div class="edit-cocktail">
     <%= link_to 'EDIT COCKTAIL', '#',
-      class: 'btn btn-main btn-lg' %>
+      class: 'btn btn-main btn-lg',
+      id: 'edit-cocktail-btn' %>
   </div>
 
   <div class="cocktail-container">
@@ -38,12 +39,12 @@
     <div class="cocktail-ingredients">
       <ul class="list-group list-group-flush">
         <% @cocktail.doses.each do |dose| %>
-        <li class="list-group-item d-flex justify-content-between">
+        <li class="list-group-item d-flex justify-content-between ingredient-item">
           <div class="info">
             <%= dose.description %>
             <span><strong><%= Ingredient.find(dose.ingredient_id).name %></strong></span>
           </div>
-          <div class="delete-icon">
+          <div class="delete-icon hidden">
             <%= link_to icon('fas', 'minus-circle',
                 class: 'cocktail-ingredient-rm fa-lg text-danger',
                 style: 'font-size:20px;opacity:0.5;',
@@ -55,7 +56,7 @@
           </div>
         </li>
         <% end %>
-        <li class="list-group-item d-flex justify-content-center">
+        <li class="list-group-item d-flex justify-content-center ingredient-item hidden" id="new-ingredient-item">
           <%= link_to icon('fas', 'plus',
             class: 'fa-lg text-success',
             style: 'font-size:20px;opacity:0.5;',

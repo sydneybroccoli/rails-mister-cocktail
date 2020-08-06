@@ -23,10 +23,8 @@ const modalAction = (modal, modalBtn) => {
 };
 
 // DOSE MODAL
-const doseModalAction = () => {
+export const doseModalAction = () => {
   const doseModal = document.getElementById('new-dose-modal-container').children[0];
   const doseModalBtn = document.getElementById('new-dose-modal-btn');
   modalAction(doseModal, doseModalBtn);
 }
-
-export { doseModalAction };

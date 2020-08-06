@@ -24,14 +24,17 @@ import 'jquery';
 import 'bootstrap';
 
 // IMPORT SCRIPTS
-import { doseModalAction } from '../scripts/modal.js';
+// import { doseModalAction } from '../scripts/modal.js';
+import { editCocktailToggle } from '../scripts/show_edit_toggle.js';
 
 // EXECUTE SCRIPTS
   // DEVELOPMENT MODE?
 if (process.env.NODE_ENV !== 'production') {
   console.log('LOOKS LIKE WE ARE IN DEVELOPMENT MODE...');
 }
-  // RUN FUNCTIONS
-document.addEventListener("DOMContentLoaded", function () {
-  doseModalAction();
+
+// RUN FUNCTIONS
+document.addEventListener("DOMContentLoaded", (e) => {
+  editCocktailToggle();
+  // doseModalAction();
 });
