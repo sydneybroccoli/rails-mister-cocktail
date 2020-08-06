@@ -38,12 +38,15 @@ const myInitCode = () => {
   switch (true) {
     // ACTIONS FOR ROOT PAGE
     case (/^\/$/i).test(page):
+      console.log('root scripts running...');
       break;
     // ACTIONS FOR INDEX PAGE
     case (/^\/cocktails$/i).test(page):
+      console.log('index scripts running...');
       break;
     // ACTIONS FOR SHOW PAGES
     case (/^\/cocktails\/\d+$/i).test(page):
+      console.log('show scripts running...');
       editCocktailToggle();
       break;
     default:
@@ -53,7 +56,8 @@ const myInitCode = () => {
 
 if (document.readyState !== 'loading' ){
   console.log('page was ready!');
-  myInitCode();
+  window.location.reload();  // super janky way of forcing the page to refresh to force JS to run every time
+  // myInitCode();
 } else {
   document.addEventListener("DOMContentLoaded", (e) => {
     console.log('page was not ready...');
