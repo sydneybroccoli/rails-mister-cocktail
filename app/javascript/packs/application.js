@@ -15,8 +15,6 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker');
-
 // IMPORT LIBRARIES
 import 'jquery';
 // import 'popper'; - NOT WORKING
@@ -34,7 +32,32 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // RUN FUNCTIONS
-document.addEventListener("DOMContentLoaded", (e) => {
-  editCocktailToggle();
-  // doseModalAction();
-});
+const myInitCode = () => {
+  const page = window.location.pathname;
+
+  switch (true) {
+    // ACTIONS FOR ROOT PAGE
+    case (/^\/$/i).test(page):
+      break;
+    // ACTIONS FOR INDEX PAGE
+    case (/^\/cocktails$/i).test(page):
+      break;
+    // ACTIONS FOR SHOW PAGES
+    case (/^\/cocktails\/\d+$/i).test(page):
+      editCocktailToggle();
+      break;
+    default:
+      console.log('no scripts for this page...');
+  }
+};
+
+if (document.readyState !== 'loading' ){
+  console.log('page was ready!');
+  myInitCode();
+} else {
+  document.addEventListener("DOMContentLoaded", (e) => {
+    console.log('page was not ready...');
+    myInitCode();
+  });
+}
+

@@ -8,7 +8,6 @@ export const editCocktailToggle = ( edit, rm, add ) => {
   editBtn.addEventListener( 'click', (event) => {
     // PREVENT REFRESH
     event.preventDefault();
-    console.log('click');
 
     // TOGGLE HIDDEN ON NEW INGREDIENT BUTTON
     ingBtnAdd.classList.toggle('hidden');
