@@ -1,0 +1,14 @@
+.cocktails-search {
+  width: 90%;
+  margin: 5px 5%;
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: no-wrap;
+
+  input#search {
+    flex-grow: 2;
+  }
+}

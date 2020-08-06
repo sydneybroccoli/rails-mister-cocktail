@@ -15,24 +15,13 @@
   <br>
 
   <br>
-  <div class="cocktails-search-filter">
+  <div class="cocktails-search">
+    <%= render 'search' %>
   </div>
   <br>
 
   <div class="cocktails-container">
-    <% @cocktails.each do |cocktail| %>
-      <%= link_to cocktail_path(cocktail.id) do %>
-      <div class="cocktail-card">
-        <div class="cocktail-img">
-          <%= image_tag cocktail.thumbnail_url, alt:"#{cocktail.name} image thumbnail" %>
-        </div>
-
-        <div class="cocktail-info">
-          <p><%= cocktail.name %></p>
-        </div>
-      </div>
-      <% end %>
-    <% end %>
+    <%= render 'cocktails' %>
   </div>
 
   <div class="nav-footer">
