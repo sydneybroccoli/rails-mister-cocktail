@@ -8,7 +8,8 @@
 // LIST STYLING
 .navigation ul {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+
     list-style-type: none;
 
   // LINK STYLING
@@ -25,9 +26,8 @@
   }
 }
 
+// HEADER ONLY STYLING
 #header ul {
-  justify-content: space-around;
-
   a:hover {
     background-color: $light-shade;
     border: solid $light-shade;
@@ -36,6 +36,7 @@
   }
 }
 
+// FOOTER ONLY STYLING
 #footer ul {
   justify-content: center;
 
