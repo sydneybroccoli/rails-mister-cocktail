@@ -15,8 +15,6 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker');
-
 // IMPORT LIBRARIES
 import 'jquery';
 // import 'popper'; - NOT WORKING
@@ -24,14 +22,46 @@ import 'jquery';
 import 'bootstrap';
 
 // IMPORT SCRIPTS
-import { doseModalAction } from '../scripts/modal.js';
+// import { doseModalAction } from '../scripts/modal.js';
+import { editCocktailToggle } from '../scripts/show_edit_toggle.js';
 
 // EXECUTE SCRIPTS
   // DEVELOPMENT MODE?
 if (process.env.NODE_ENV !== 'production') {
   console.log('LOOKS LIKE WE ARE IN DEVELOPMENT MODE...');
 }
-  // RUN FUNCTIONS
-document.addEventListener("DOMContentLoaded", function () {
-  doseModalAction();
-});
+
+// RUN FUNCTIONS
+const myInitCode = () => {
+  const page = window.location.pathname;
+
+  switch (true) {
+    // ACTIONS FOR ROOT PAGE
+    case (/^\/$/i).test(page):
+      console.log('root scripts running...');
+      break;
+    // ACTIONS FOR INDEX PAGE
+    case (/^\/cocktails$/i).test(page):
+      console.log('index scripts running...');
+      break;
+    // ACTIONS FOR SHOW PAGES
+    case (/^\/cocktails\/\d+$/i).test(page):
+      console.log('show scripts running...');
+      editCocktailToggle();
+      break;
+    default:
+      console.log('no scripts for this page...');
+  }
+};
+
+if (document.readyState !== 'loading' ){
+  console.log('page was ready!');
+  window.location.reload();  // super janky way of forcing the page to refresh to force JS to run every time
+  // myInitCode();
+} else {
+  document.addEventListener("DOMContentLoaded", (e) => {
+    console.log('page was not ready...');
+    myInitCode();
+  });
+}
+
