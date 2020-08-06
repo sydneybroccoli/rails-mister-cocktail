@@ -1,0 +1,24 @@
+<h1 id="featured-heading">MEAL OF THE DAY</h1>
+
+<div class="featured-card">
+  <%= link_to cocktail_path(featured.id) do %>
+
+    <%= image_tag featured.thumbnail_url, alt:"#{featured.name} image thumbnail",
+    id: "featured-img" %>
+
+    <div class="featured-content">
+      <div id="featured-name">
+        <%= featured.name %>
+      </div>
+
+      <ul id="featured-ingredients">
+        <% featured.ingredients.each do |ingredient| %>
+          <li>
+            <%= ingredient.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+</div>

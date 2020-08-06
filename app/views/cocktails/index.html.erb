@@ -1,26 +1,30 @@
 <section class="cocktails-grid">
   <div class="nav-header">
-    <%= render 'shared/navbar' %>
+    <%= render partial: 'shared/navbar', layout: 'layouts/banner' %>
   </div>
 
-  <div class="cocktails-container container">
+  <div class="create-cocktail">
+    <%= link_to 'CREATE NEW COCKTAIL', new_cocktail_path,
+      class: 'btn btn-main btn-lg' %>
+  </div>
 
-    <% @cocktails.each do |cocktail| %>
-      <%= link_to cocktail_path(cocktail.id) do %>
-      <div class="cocktail-card">
-        <div class="cocktail-img">
-          <%= image_tag cocktail.thumbnail_url, alt:"#{cocktail.name} image thumbnail" %>
-        </div>
+  <br>
+  <div class="featured-cocktail">
+    <%= render 'featured', featured: @cocktails.sample %>
+  </div>
+  <br>
 
-        <div class="cocktail-info">
-          <p><%= cocktail.name %></p>
-        </div>
-      </div>
-      <% end %>
-    <% end %>
+  <br>
+  <div class="cocktails-search">
+    <%= render 'search' %>
+  </div>
+  <br>
+
+  <div class="cocktails-container">
+    <%= render 'cocktails' %>
   </div>
 
   <div class="nav-footer">
-    <%= render 'shared/footer' %>
+    <%= render partial: 'shared/footer', layout: 'layouts/banner' %>
   </div>
 </section>

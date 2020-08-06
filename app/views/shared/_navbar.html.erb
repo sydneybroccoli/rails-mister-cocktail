@@ -1,17 +1,21 @@
-<div class="navigation header">
-  <ul class="list-inline m-0 p-0">
+<h1 class="font-header">SOUP OF THE DAY</h1>
+
+<div class="banner-nav navigation" id="header">
+  <ul class="m-0 p-0">
     <li class="nav-item" id="nav-all-cocktails">
-      <%= link_to 'ALL COCKTAILS', cocktails_path,
+      <%= link_to 'COCKTAILS', cocktails_path,
         class: "dropdown-item" %>
     </li>
-    <li class="nav-item" id="nav-home">
-      <%= link_to icon('fas', 'glass-whiskey',
-          class: 'fa-lg navbar-brand',
-          id: 'navBrand'), root_path
-      %>
+
+    <li class="nav-item" id="nav-all-cocktails">
+      <%= link_to 'ABOUT', cocktails_path,
+        class: "dropdown-item" %>
     </li>
-    <li class="nav-item" id="nav-new-cocktail">
-      <%= link_to 'NEW COCKTAIL', new_cocktail_path, class: "dropdown-item" %>
+
+    <li class="nav-item" id="nav-all-cocktails">
+      <%= link_to 'CONTACT', cocktails_path,
+        class: "dropdown-item" %>
     </li>
    </ul>
 </div>
+

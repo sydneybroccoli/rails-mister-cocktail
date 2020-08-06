@@ -1,6 +1,18 @@
-.hero-btn {
+a.btn {
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+  padding: 0 0.5em;
 
-  a {
-    color: black;
-  }
+  &:hover { opacity: 0.75; }
+}
+
+.btn-main {
+  background-color: $main-brand;
+  border: solid $main-brand;
+  color: $dark-shade;
+}
+
+.btn-lg {
+  font-size: 2em;
 }

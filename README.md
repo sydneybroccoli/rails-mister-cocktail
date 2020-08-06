@@ -8,7 +8,7 @@ Soup of the Day is a basic online recipe book for cocktails.  There is no accoun
 ### RUBY VERSION:
 
 - RUBY: 2.6.5
-- RAILS: 5.2.4.1
+- RAILS: 5.2.4.3
 
 ### DEPENDENCIES:
 
