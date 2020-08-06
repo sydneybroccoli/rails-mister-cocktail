@@ -1,0 +1,84 @@
+#featured-heading {
+  // POSITIONING
+  text-align: center;
+  padding-left: 0.25em;
+
+  // STYLING
+  font-family: $body-font;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.75em;
+}
+
+.featured-card {
+  a {
+    text-decoration: none;
+    color: $dark-shade;
+  }
+
+  // CARD SIZING
+  width: 90%;
+  height: 300px;
+  margin: 5px 5%;
+
+  // CARD POSITIONING
+  position: relative;
+  float: left;
+
+  // BACKGROUND IMAGE
+  #featured-img {
+    // POSITIONING
+    width: 100%; height: 100%;
+    object-fit: cover;
+
+    // STYLING
+    opacity: 0.85;
+  }
+
+  // CONTENT
+  .featured-content {
+    // POSITIONING
+    width: calc(100% - 10px);
+    position: absolute;
+    bottom: 0px; left: 5px;
+  }
+}
+
+// NAME
+#featured-name {
+  // POSITIONING
+  text-align: center;
+
+  // STYLING
+  background-color: $dark-shade;
+  border: solid $dark-shade;
+  color: $light-shade;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 2em;
+}
+
+// INGREDIENTS LIST
+#featured-ingredients {
+  // POSITIONING
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  // STYLING
+  list-style-type: none;
+}
+
+// INGREDIENTS LIST ITEMS
+#featured-ingredients li {
+  // POSITIONING
+  padding: 0 0.5em;
+  margin: 0.25em 0.5em;
+
+  // STYLING
+  text-transform: uppercase;
+  background-color: $light-shade;
+  border: solid $light-shade;
+  color: $dark-shade;
+  opacity: 0.75;
+}
