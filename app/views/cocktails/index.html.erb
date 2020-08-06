@@ -14,12 +14,12 @@
   </div>
   <br>
 
+  <br>
   <div class="cocktails-search-filter">
-
   </div>
+  <br>
 
-  <div class="cocktails-container container">
-
+  <div class="cocktails-container">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail.id) do %>
       <div class="cocktail-card">
