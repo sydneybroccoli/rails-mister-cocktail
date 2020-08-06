@@ -3,7 +3,12 @@
     <%= render partial: 'shared/navbar', layout: 'layouts/banner' %>
   </div>
 
-  <div class="cocktail-container container">
+  <div class="edit-cocktail">
+    <%= link_to 'EDIT COCKTAIL', '#',
+      class: 'btn btn-main btn-lg' %>
+  </div>
+
+  <div class="cocktail-container">
     <div class="cocktail-img">
       <% if @cocktail.thumbnail_url.nil? %>
         <%= image_tag 'https://images.pexels.com/photos/605408/pexels-photo-605408.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
@@ -62,6 +67,7 @@
     </div>
   </div>
 
+  <br>
 
   <div class="nav-footer">
     <%= render partial: 'shared/footer', layout: 'layouts/banner' %>
