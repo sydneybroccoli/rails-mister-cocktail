@@ -54,14 +54,4 @@ const myInitCode = () => {
   }
 };
 
-if (document.readyState !== 'loading' ){
-  console.log('page was ready!');
-  window.location.reload();  // super janky way of forcing the page to refresh to force JS to run every time
-  // myInitCode();
-} else {
-  document.addEventListener("DOMContentLoaded", (e) => {
-    console.log('page was not ready...');
-    myInitCode();
-  });
-}
-
+myInitCode();
