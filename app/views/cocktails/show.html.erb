@@ -61,8 +61,8 @@
             class: 'fa-lg text-success',
             style: 'font-size:20px;opacity:0.5;',
             id: 'addButton') + ' ADD ANOTHER INGREDIENT',
-            new_cocktail_dose_path(@cocktail.id),
-            id: '' %>
+            '#',
+            id: 'new-dose-modal-btn' %>
         </li>
       </ul>
     </div>
@@ -74,3 +74,10 @@
     <%= render partial: 'shared/footer', layout: 'layouts/banner' %>
   </div>
 </section>
+
+<div class="modal" id="new-dose-modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <p>this is the text inside the modal</p>
+  </div>
+</div>

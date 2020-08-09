@@ -22,7 +22,7 @@ import 'jquery';
 import 'bootstrap';
 
 // IMPORT SCRIPTS
-// import { doseModalAction } from '../scripts/modal.js';
+import { doseModalAction } from '../scripts/modal.js';
 import { editCocktailToggle } from '../scripts/show_edit_toggle.js';
 
 // EXECUTE SCRIPTS
@@ -48,6 +48,7 @@ const myInitCode = () => {
     case (/^\/cocktails\/\d+$/i).test(page):
       console.log('show scripts running...');
       editCocktailToggle();
+      doseModalAction();
       break;
     default:
       console.log('no scripts for this page...');

@@ -8,13 +8,13 @@ const modalAction = (modal, modalBtn) => {
     modal.style.display = 'block';
 
     // CLOSE MODAL
+    // the close button within the modal
     closeBtn.addEventListener('click', (event)=> {
       modal.style.display = 'none';
-
     });
 
+    // if the user clicks outside of the modal, close the modal
     window.addEventListener('click', (event)=> {
-      // if the user clicks outside of the modal, close the modal
       if(event.target == modal) {
         modal.style.display = 'none';
       }
@@ -24,7 +24,7 @@ const modalAction = (modal, modalBtn) => {
 
 // DOSE MODAL
 export const doseModalAction = () => {
-  const doseModal = document.getElementById('new-dose-modal-container').children[0];
-  const doseModalBtn = document.getElementById('new-dose-modal-btn');
+  const doseModal = document.querySelector('#new-dose-modal');
+  const doseModalBtn = document.querySelector('#new-dose-modal-btn');
   modalAction(doseModal, doseModalBtn);
 }
