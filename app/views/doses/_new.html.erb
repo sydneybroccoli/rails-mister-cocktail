@@ -1,0 +1,10 @@
+<div class="new-ingredient-container container">
+  <%= link_to "<< BACK TO #{@cocktail.name.upcase} COCKTAIL", cocktail_path(@cocktail.id),
+    class: "nav-item" %>
+
+  <br><br><br>
+
+  <div class="new-ingredient-form container">
+    <%= render 'form', dose: @dose %>
+  </div>
+</div>

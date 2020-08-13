@@ -6,7 +6,6 @@ class DosesController < ApplicationController
   end
 
   def create
-    find_cocktail
     @dose = Dose.new( dose_params )
     @dose.cocktail_id = @cocktail.id
 
