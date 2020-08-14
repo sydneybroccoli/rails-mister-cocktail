@@ -1,5 +1,5 @@
-import { updateCocktailHoverable, updateCocktailModals } from './update_cocktail.js';
-import { createDoseModal } from './create_dose.js';
+import { updateCocktailModals, updateCocktailHoverable } from './update_cocktail.js';
+import { createDoseModal, updateIngredientsHidden } from './update_ingredients.js';
 
 export const editCocktailToggle = () => {
   // DEFAULT ACTIONS
@@ -8,8 +8,6 @@ export const editCocktailToggle = () => {
 
   // DECLARE VARIABLES
   const editBtn = document.querySelector('#edit-cocktail-btn');
-  const ingBtnAdd = document.querySelector('li#new-ingredient-item');
-  const ingBtnRmList = document.querySelectorAll('div.delete-icon');
 
   // EVENT LISTENER ON EDIT BTN
   editBtn.addEventListener( 'click', (event) => {
@@ -19,13 +17,8 @@ export const editCocktailToggle = () => {
     // TOGGLE EDIT COCKTAIL
     updateCocktailHoverable();
 
-    // TOGGLE HIDDEN ON NEW INGREDIENT BUTTON
-    ingBtnAdd.classList.toggle('hidden');
-
-    // TOGGLE HIDDEN ON REMOVE INGREDIENT BUTTONS
-    ingBtnRmList.forEach( element => {
-      element.classList.toggle('hidden');
-    });
+    // TOGGLE UPDATE INGREDIENTS
+    updateIngredientsHidden();
 
     // TOGGLE EDIT BTN TEXT
     if (editBtn.text === 'EDIT COCKTAIL') {
