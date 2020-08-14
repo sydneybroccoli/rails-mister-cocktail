@@ -1,5 +1,11 @@
-import { updateCocktailModals, updateCocktailHoverable } from './update_cocktail.js';
-import { createDoseModal, updateIngredientsHidden } from './update_ingredients.js';
+import {
+  updateCocktailModals,
+  updateCocktailHoverable
+} from './update_cocktail.js';
+import {
+  createDoseModal,
+  updateIngredientsHidden
+} from './update_ingredients.js';
 
 export const editCocktailToggle = () => {
   // DEFAULT ACTIONS
@@ -14,10 +20,10 @@ export const editCocktailToggle = () => {
     // PREVENT REFRESH
     event.preventDefault();
 
-    // TOGGLE EDIT COCKTAIL
+    // TOGGLE UPDATE COCKTAIL VISIBILITY
     updateCocktailHoverable();
 
-    // TOGGLE UPDATE INGREDIENTS
+    // TOGGLE UPDATE INGREDIENTS VISIBILITY
     updateIngredientsHidden();
 
     // TOGGLE EDIT BTN TEXT
