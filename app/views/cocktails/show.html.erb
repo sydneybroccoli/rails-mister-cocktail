@@ -79,12 +79,15 @@
 <div class="modal" id="new-dose-modal">
   <div class="modal-content">
     <span class="close-btn">&times;</span>
-    <%= render 'doses/form', cocktail: @cocktail, dose: @dose %>
+    <%= render 'doses/form',
+        cocktail: @cocktail, dose: @dose %>
   </div>
 </div>
 
 <div class="modal" id="edit-cocktail-modal">
   <div class="modal-content">
-    <%= render layout: 'layouts/modal_form', partial: 'form', cocktail: @cocktail %>
+    <span class="close-btn">&times;</span>
+    <%= render 'form',
+        cocktail: @cocktail %>
   </div>
 </div>

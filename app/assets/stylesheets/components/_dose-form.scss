@@ -1,0 +1,20 @@
+.dose-ingredient-form {
+  background-color: $light-shade;
+
+  // FORM ROW STYLING
+  .form-row {
+    // DOSE
+    .dif-dose {
+      flex-grow: 0;
+    }
+    // INGREDIENT
+    .dif-ingredient {
+      flex-grow: 1;
+    }
+    // REMOTE BTN
+    .nif-rm-btn {
+      padding-top: 1.0em;
+      flex-grow: 0;
+    }
+  }
+}
