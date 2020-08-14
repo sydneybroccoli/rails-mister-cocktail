@@ -1,4 +1,11 @@
-export const editCocktailToggle = ( edit, rm, add ) => {
+import { updateCocktailHoverable, updateCocktailModals } from './update_cocktail.js';
+import { createDoseModal } from './create_dose.js';
+
+export const editCocktailToggle = () => {
+  // DEFAULT ACTIONS
+  createDoseModal();
+  updateCocktailModals();
+
   // DECLARE VARIABLES
   const editBtn = document.querySelector('#edit-cocktail-btn');
   const ingBtnAdd = document.querySelector('li#new-ingredient-item');
@@ -8,6 +15,9 @@ export const editCocktailToggle = ( edit, rm, add ) => {
   editBtn.addEventListener( 'click', (event) => {
     // PREVENT REFRESH
     event.preventDefault();
+
+    // TOGGLE EDIT COCKTAIL
+    updateCocktailHoverable();
 
     // TOGGLE HIDDEN ON NEW INGREDIENT BUTTON
     ingBtnAdd.classList.toggle('hidden');

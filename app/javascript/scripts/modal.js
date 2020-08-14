@@ -1,4 +1,4 @@
-const modalAction = (modal, modalBtn) => {
+export const modalAction = (modal, modalBtn) => {
   // DECLARE VARIABLES
   var closeBtn = document.querySelector('.close-btn');
 
@@ -21,10 +21,3 @@ const modalAction = (modal, modalBtn) => {
     });
   });
 };
-
-// DOSE MODAL
-export const doseModalAction = () => {
-  const doseModal = document.querySelector('#new-dose-modal');
-  const doseModalBtn = document.querySelector('#new-dose-modal-btn');
-  modalAction(doseModal, doseModalBtn);
-}

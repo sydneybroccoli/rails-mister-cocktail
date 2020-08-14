@@ -64,4 +64,7 @@
 }
 
 .hidden { display: none !important; }
+.hoverable {
+  &:hover { opacity: 0.5; }
+}
 
