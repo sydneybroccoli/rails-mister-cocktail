@@ -18,8 +18,7 @@ export const updateCocktailModals = () => {
   const editModal = document.querySelector('#edit-cocktail-modal');
   const editFormGroups = document.querySelectorAll('.form-group');
 
-  options.forEach((option) => {
-
+  options.forEach( (option) => {
     // EVENT LISTENER TO DETERMINE WHICH ELEMENT SHOULD BE EDITED
     option.addEventListener( 'click', (event) => {
 
@@ -39,29 +38,29 @@ export const updateCocktailModals = () => {
       var cls = event.target.parentNode.classList;
       switch( true ) {
         case cls.contains('cocktail-img'):
-          editFormGroups[1].childNodes[0].classList.remove('hidden');
-          editFormGroups[1].childNodes[1].classList.remove('hidden');
-          break;
-        case cls.contains('cocktail-name'):
-          editFormGroups[0].childNodes[0].classList.remove('hidden');
-          editFormGroups[0].childNodes[1].classList.remove('hidden');
-          break;
-        case cls.contains('cocktail-alcholic'):
-          editFormGroups[2].childNodes[0].classList.remove('hidden');
-          editFormGroups[2].childNodes[1].classList.remove('hidden');
-          break;
-        case cls.contains('cocktail-glass'):
           editFormGroups[3].childNodes[0].classList.remove('hidden');
           editFormGroups[3].childNodes[1].classList.remove('hidden');
           break;
-        case cls.contains('cocktail-instructions'):
+        case cls.contains('cocktail-name'):
+          editFormGroups[2].childNodes[0].classList.remove('hidden');
+          editFormGroups[2].childNodes[1].classList.remove('hidden');
+          break;
+        case cls.contains('cocktail-alcholic'):
           editFormGroups[4].childNodes[0].classList.remove('hidden');
           editFormGroups[4].childNodes[1].classList.remove('hidden');
+          break;
+        case cls.contains('cocktail-glass'):
+          editFormGroups[5].childNodes[0].classList.remove('hidden');
+          editFormGroups[5].childNodes[1].classList.remove('hidden');
+          break;
+        case cls.contains('cocktail-instructions'):
+          editFormGroups[6].childNodes[0].classList.remove('hidden');
+          editFormGroups[6].childNodes[1].classList.remove('hidden');
           break;
         default:
           console.log('ERROR.  Unable to fetch appropriate form!');
       }
-    }
+    });
 
     // OPEN MODAL
     modalAction(editModal, option);
