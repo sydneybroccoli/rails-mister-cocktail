@@ -35,6 +35,7 @@
   <br>
 
   <%= f.button :submit,
+    (@cocktail.new_record? ? "CREATE COCKTAIL" : "UPDATE COCKTAIL"),
     input_html: { class: 'ncf-submit' } %>
 <% end %>
 

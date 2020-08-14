@@ -8,16 +8,14 @@ import {
 } from './update_ingredients.js';
 
 export const editCocktailToggle = () => {
-  // DEFAULT ACTIONS
-  createDoseModal();
-  updateCocktailModals();
-
   // DECLARE VARIABLES
   const editBtn = document.querySelector('#edit-cocktail-btn');
 
   // EVENT LISTENER ON EDIT BTN
   editBtn.addEventListener( 'click', (event) => {
-    // PREVENT REFRESH
+    // DEFAULT ACTIONS
+    createDoseModal();
+    updateCocktailModals();
     event.preventDefault();
 
     // TOGGLE UPDATE COCKTAIL VISIBILITY
