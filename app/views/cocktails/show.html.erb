@@ -3,23 +3,26 @@
     <%= render partial: 'shared/navbar', layout: 'layouts/banner' %>
   </div>
 
-  <div class="edit-cocktail">
-    <%= link_to 'EDIT COCKTAIL', '#',
-      class: 'btn btn-main btn-lg',
-      id: 'edit-cocktail-btn' %>
+  <div class='cocktail-btns'>
+    <div class="edit-cocktail">
+      <%= link_to 'EDIT COCKTAIL', '#',
+        class: 'btn btn-main btn-lg',
+        id: 'edit-cocktail-btn' %>
+    </div>
+
+    <%# SAVE and DESTROY btns are HIDDEN by DEFAULT %>
+    <div class="save-cocktail hidden">
+      <%= link_to 'SAVE COCKTAIL', '#',
+        class: 'btn btn-main btn-lg',
+        id: 'save-cocktail-btn' %>
+    </div>
+    <div class="destroy-cocktail hidden">
+      <%= link_to 'DELETE COCKTAIL', '#',
+        class: 'btn btn-main btn-lg',
+        id: 'destroy-cocktail-btn' %>
+    </div>
   </div>
 
-  <%# HIDDEN BUTTONS FOR SAVE/DESTROY %>
-  <div class="save-cocktail">
-    <%= link_to 'SAVE COCKTAIL', '#',
-      class: 'btn btn-main btn-lg',
-      id: 'save-cocktail-btn' %>
-  </div>
-  <div class="destroy-cocktail">
-    <%= link_to 'DELETE COCKTAIL', '#',
-      class: 'btn btn-main btn-lg',
-      id: 'destroy-cocktail-btn' %>
-  </div>
 
   <div class="cocktail-container">
     <div class="cocktail-img">
