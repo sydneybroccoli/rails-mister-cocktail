@@ -10,6 +10,8 @@ import {
 export const editCocktailToggle = () => {
   // DECLARE VARIABLES
   const editBtn = document.querySelector('#edit-cocktail-btn');
+  const saveBtn = document.querySelector('#save-cocktail-btn');
+  const destroyBtn = document.querySelector('#destroy-cocktail-btn');
 
   // EVENT LISTENER ON EDIT BTN
   editBtn.addEventListener( 'click', (event) => {
