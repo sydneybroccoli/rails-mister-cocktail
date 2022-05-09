@@ -13,6 +13,7 @@ export const editCocktailToggle = () => {
   const saveBtn = document.querySelector('#save-cocktail-btn');
   const destroyBtn = document.querySelector('#destroy-cocktail-btn');
 
+
   // EVENT LISTENER ON EDIT BTN
   editBtn.addEventListener( 'click', (event) => {
     // DEFAULT ACTIONS
@@ -26,11 +27,16 @@ export const editCocktailToggle = () => {
     // TOGGLE UPDATE INGREDIENTS VISIBILITY
     updateIngredientsHidden();
 
-    // TOGGLE EDIT BTN TEXT
-    if (editBtn.text === 'EDIT COCKTAIL') {
-      editBtn.text = 'SAVE COCKTAIL';
-    } else {
-      editBtn.text = 'EDIT COCKTAIL';
-    }
+    // // TOGGLE EDIT BTN TEXT
+    // if (editBtn.text === 'EDIT COCKTAIL') {
+    //   editBtn.text = 'SAVE COCKTAIL';
+    // } else {
+    //   editBtn.text = 'EDIT COCKTAIL';
+    // }
+
+    // CHANGE THE BTNS
+    //editBtn.parentElement.classList.add('hidden');
+    saveBtn.parentElement.classList.remove('hidden');
+    destroyBtn.parentElement.classList.remove('hidden');
   });
 }
