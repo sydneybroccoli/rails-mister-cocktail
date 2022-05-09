@@ -34,6 +34,12 @@ class CocktailsController < ApplicationController
     redirect_to cocktail_path(@cocktail.id)
   end
 
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy_all
+    redirect_to cocktails_path
+  end
+
   def new_dose
     respond_to do |format|
       format.html
