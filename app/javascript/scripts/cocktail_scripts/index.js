@@ -7,6 +7,10 @@ import {
   updateIngredientsHidden
 } from './update_ingredients.js';
 
+import {
+  updateCocktailForm
+} from './update_cocktail_form.js';
+
 export const editCocktailToggle = () => {
   // DECLARE VARIABLES
   const editBtn = document.querySelector('#edit-cocktail-btn');
@@ -16,16 +20,18 @@ export const editCocktailToggle = () => {
 
   // EVENT LISTENER ON EDIT BTN
   editBtn.addEventListener( 'click', (event) => {
-    // DEFAULT ACTIONS
-    createDoseModal();
-    updateCocktailModals();
-    event.preventDefault();
+      updateCocktailForm();
 
-    // TOGGLE UPDATE COCKTAIL VISIBILITY
-    updateCocktailHoverable();
+    // // DEFAULT ACTIONS
+    // createDoseModal();
+    // updateCocktailModals();
+    // event.preventDefault();
 
-    // TOGGLE UPDATE INGREDIENTS VISIBILITY
-    updateIngredientsHidden();
+    // // TOGGLE UPDATE COCKTAIL VISIBILITY
+    // updateCocktailHoverable();
+
+    // // TOGGLE UPDATE INGREDIENTS VISIBILITY
+    // updateIngredientsHidden();
 
     // // TOGGLE EDIT BTN TEXT
     // if (editBtn.text === 'EDIT COCKTAIL') {

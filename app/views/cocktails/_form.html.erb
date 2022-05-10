@@ -1,12 +1,13 @@
 <%= javascript_include_tag('') %>
 
 <div class="cocktail-form form">
-  <%= simple_form_for @cocktail do |f| %>
+  <%= simple_form_for @cocktail, remote: true do |f| %>
 
     <%= f.input :name,
       label: (@cocktail.new_record? ? false : 'COCKTAIL NAME'),
+      html: { class: 'cocktail-name' },
       input_html: {
-        class: 'cf-option',
+        class: 'cf-option cocktail-name',
         id: 'cf-name'
       },
       placeholder: 'COCKTAIL NAME' %>
@@ -14,7 +15,7 @@
     <%= f.input :thumbnail_url,
       label: (@cocktail.new_record? ? false : 'COCKTAIL THUMBNAIL'),
       input_html: {
-        class: 'cf-option',
+        class: 'cf-option cocktail-img',
         id: 'cf-thumbnail'
       },
       placeholder: 'COCKTAIL THUMBNAIL URL' %>
@@ -22,7 +23,7 @@
     <%= f.input :alcoholic,
       label: (@cocktail.new_record? ? false : 'ALCHOLIC OR NAH?'),
       input_html: {
-        class: 'cf-option',
+        class: 'cf-option cocktail-alcoholic',
         id: 'cf-alcoholic'
       },
       collection: [['Alcoholic', '1'], ['Non-Alcoholic', '2']] %>
@@ -30,7 +31,7 @@
     <%= f.input :glass,
       label: (@cocktail.new_record? ? false : 'COCKTAIL GLASS TYPE'),
       input_html: {
-        class: 'cf-option',
+        class: 'cf-option cocktail-glass',
         id: 'cf-glass'
       },
       placeholder: 'COCKTAIL GLASS TYPE' %>
@@ -39,7 +40,7 @@
       as: :text,
       label: (@cocktail.new_record? ? false : 'COCKTAIL INSTRUCTIONS'),
       input_html: {
-        class: 'cf-option',
+        class: 'cf-option cocktail-instructions',
         id: 'cf-instructions'
       },
       placeholder: 'COCKTAIL INSTRUCTIONS...' %>
