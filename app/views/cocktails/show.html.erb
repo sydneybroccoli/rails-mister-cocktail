@@ -6,19 +6,13 @@
   <div class='cocktail-btns'>
     <div class="edit-cocktail">
       <%= link_to 'EDIT COCKTAIL',
-        edit_cocktail_path(@cocktail),
+        '#',
         class: 'btn btn-main btn-lg',
         id: 'edit-cocktail-btn' %>
     </div>
 
     <%# SAVE and DESTROY btns are HIDDEN by DEFAULT %>
-    <div class="save-cocktail hidden">
-      <%= link_to 'SAVE COCKTAIL', 
-        cocktail_path(@cocktail.id),
-        method: 'PATCH',
-        class: 'btn btn-main btn-lg',
-        id: 'save-cocktail-btn' %>
-    </div>
+    
     <div class="destroy-cocktail hidden">
       <%= link_to 'DELETE COCKTAIL',
         @cocktail,
