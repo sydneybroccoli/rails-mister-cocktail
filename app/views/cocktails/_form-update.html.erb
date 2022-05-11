@@ -1,62 +1,55 @@
 <%= javascript_include_tag('') %>
 
-<div class="cocktail-form form">
-  <%= simple_form_for @cocktail, remote: true do |f| %>
-
+<div class="form form-cocktail-update">
+  <%= simple_form_for @cocktail do |f| %>
     <%= f.input :name,
-      label: (@cocktail.new_record? ? false : 'COCKTAIL NAME'),
-      html: { class: 'cocktail-name' },
+      label: 'COCKTAIL NAME',
+      html: { 
+        class: 'cocktail-name' },
       input_html: {
-        class: 'cf-option cocktail-name',
-        id: 'cf-name'
-      },
+        class: 'cocktail-name cf-option',
+        id: 'cf-name' },
       placeholder: 'COCKTAIL NAME' %>
 
     <%= f.input :thumbnail_url,
-      label: (@cocktail.new_record? ? false : 'COCKTAIL THUMBNAIL'),
+      label: 'COCKTAIL IMAGE',
+      html: { 
+        class: 'cocktail-img' },
       input_html: {
-        class: 'cf-option cocktail-img',
-        id: 'cf-thumbnail'
-      },
+        class: 'cocktail-img cf-option',
+        id: 'cf-name' },
       placeholder: 'COCKTAIL THUMBNAIL URL' %>
 
     <%= f.input :alcoholic,
-      label: (@cocktail.new_record? ? false : 'ALCHOLIC OR NAH?'),
+      collection: Cocktail::ALCOHOLIC,
+      label: '(NON) ALCOHOLIC?',
+      html: { 
+        class: 'cocktail-alcoholic' },
       input_html: {
-        class: 'cf-option cocktail-alcoholic',
-        id: 'cf-alcoholic'
-      },
-      collection: [['Alcoholic', '1'], ['Non-Alcoholic', '2']] %>
+        class: 'cocktail-alcoholic cf-option',
+        id: 'cf-name' }  %>
 
     <%= f.input :glass,
-      label: (@cocktail.new_record? ? false : 'COCKTAIL GLASS TYPE'),
+      collection: Cocktail::GLASS,
+      label: 'COCKTAIL GLASS',
+      html: { 
+        class: 'cocktail-glass' },
       input_html: {
-        class: 'cf-option cocktail-glass',
-        id: 'cf-glass'
-      },
-      placeholder: 'COCKTAIL GLASS TYPE' %>
+        class: 'cocktail-glass cf-option',
+        id: 'cf-name' } %>
 
-    <%= f.input :instructions,
-      as: :text,
-      label: (@cocktail.new_record? ? false : 'COCKTAIL INSTRUCTIONS'),
+    <%= f.text_area :instructions,
+      label: 'INSTRUCTIONS',
+      html: { 
+        class: 'cocktail-instructions' },
       input_html: {
-        class: 'cf-option cocktail-instructions',
-        id: 'cf-instructions'
-      },
-      placeholder: 'COCKTAIL INSTRUCTIONS...' %>
+        class: 'cocktail-instructions cf-option',
+        id: 'cf-name' },
+      placeholder: 'INSTRUCTIONS...' %>
 
-    <% if @cocktail.new_record? %>
-      <!-- IF THE USER IS CREATING A NEW COCKTAIL -->
-      <br>
-      <div class="new-cocktail-warning">
-        <p>DON'T WORRY. YOU CAN ADD INGREDIENTS LATER!</p>
-      </div>
-      <br>
-      <%= f.button :submit,
-        "CREATE NEW COCKTAIL!",
-        class: 'cf-submit form-btn',
-        id: "create-cocktail-btn ncf-submit" %>
-    <% end %>
-
+    <%= f.submit 'UPDATE COCKTAIL',
+      class: 'cf-submit',
+      id: 'btn-create-cocktail ncf-submit'  %>
   <% end %>
+
 </div>

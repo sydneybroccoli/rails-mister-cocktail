@@ -41,7 +41,7 @@ export const editCocktailToggle = () => {
     // }
 
     // CHANGE THE BTNS
-    //editBtn.parentElement.classList.add('hidden');
+    editBtn.parentElement.classList.add('hidden');
     saveBtn.parentElement.classList.remove('hidden');
     destroyBtn.parentElement.classList.remove('hidden');
   });
