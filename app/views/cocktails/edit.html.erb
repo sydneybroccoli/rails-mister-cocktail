@@ -1,19 +1,21 @@
 <section class="hero" id="new-cocktail">
   <div class="new-cocktail-container container">
+
     <%= link_to '<< BACK TO HOME PAGE', root_path,
       class: "nav-item" %>
-    <br><br>
-    <%= link_to '<< BACK TO COCKTAIL PAGE', cocktail_path(@cocktail),
+    
+    <br>
+    
+    <%= link_to '<< BACK TO ALL COCKTAILS', cocktails_path,
+      class: "nav-item" %>
+    
+    <br>
+
+    <%= link_to '<< BACK TO ' + @cocktail.name + ' PAGE', cocktail_path(@cocktail),
       class: "nav-item" %>
 
     <br><br>
-    <div class="save-cocktail">
-      <%= link_to 'SAVE COCKTAIL', 
-        cocktail_path(@cocktail.id),
-        method: 'PATCH',
-        class: 'btn btn-main btn-lg',
-        id: 'save-cocktail-btn' %>
-    </div>
+
     <div class="destroy-cocktail">
       <%= link_to 'DELETE COCKTAIL',
         @cocktail,
@@ -23,10 +25,11 @@
         id: 'destroy-cocktail-btn' %>
     </div>
 
-    <br><br>
+    <br><br><br>
 
     <div class="update-cocktail-form container">
       <%= render 'form-update', cocktail: @cocktail %>
     </div>
+
   </div>
 </section>
