@@ -3,23 +3,13 @@
     <%= render partial: 'shared/navbar', layout: 'layouts/banner' %>
   </div>
 
+
   <div class='cocktail-btns'>
     <div class="edit-cocktail">
       <%= link_to 'EDIT COCKTAIL',
-        '#',
+        edit_cocktail_path(@cocktail),
         class: 'btn btn-main btn-lg',
         id: 'edit-cocktail-btn' %>
-    </div>
-
-    <%# SAVE and DESTROY btns are HIDDEN by DEFAULT %>
-    
-    <div class="destroy-cocktail hidden">
-      <%= link_to 'DELETE COCKTAIL',
-        @cocktail,
-        method: :delete,
-        data: { confirm: "ARE YOU SURE?" },
-        class: 'btn btn-main btn-lg',
-        id: 'destroy-cocktail-btn' %>
     </div>
   </div>
 
