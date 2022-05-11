@@ -12,6 +12,7 @@ export const updateCocktailForm = () => {
   const items = document.querySelectorAll('div.cocktail-item');
   const form = document.querySelector('form.edit_cocktail');
   const fitems = form.querySelectorAll('.form-group');
+  console.log(fitems);
 
   // ADD FORM OPTIONS
   items.forEach( (item) => {
@@ -52,18 +53,11 @@ const updateCocktailForm_INSERT = ( item, fitems ) => {
 
 } // END OF updateCocktailForm_INSERT
 
-export const submitCocktailForm = ( btn ) => {
-  btn.addEventListener( 'click', (e) => {
-    e.preventDefault();
+// export const updateCocktailForm_SUBMIT = ( btn, form ) => {
 
-  }) // END OF EVENT LISTENER
-}
+// } // END OF updateCocktailForm_SUBMIT
 
-export const updateCocktailForm_SUBMIT = ( btn, form ) => {
+// export const updateCocktailForm_DELETE = ( btn, form ) => {
 
-} // END OF updateCocktailForm_SUBMIT
-
-export const updateCocktailForm_DELETE = ( btn, form ) => {
-
-} // END OF updateCocktailForm_DELETE
+// } // END OF updateCocktailForm_DELETE
 

@@ -6,7 +6,7 @@
   <div class='cocktail-btns'>
     <div class="edit-cocktail">
       <%= link_to 'EDIT COCKTAIL',
-        '#',
+        edit_cocktail_path(@cocktail),
         class: 'btn btn-main btn-lg',
         id: 'edit-cocktail-btn' %>
     </div>
@@ -97,7 +97,7 @@
   </div>
 </section>
 
-<div class="form edit-cocktail-form hidden">
+<div class="form edit-cocktail-form ">
   <%= render 'form-update',
         cocktail: @cocktail %>
 </div>

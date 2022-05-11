@@ -1,48 +1,48 @@
-import {
-  updateCocktailModals,
-  updateCocktailHoverable
-} from './update_cocktail.js';
-import {
-  createDoseModal,
-  updateIngredientsHidden
-} from './update_ingredients.js';
+// import {
+//   updateCocktailModals,
+//   updateCocktailHoverable
+// } from './update_cocktail.js';
+// import {
+//   createDoseModal,
+//   updateIngredientsHidden
+// } from './update_ingredients.js';
 
-import {
-  updateCocktailForm
-} from './update_cocktail_form.js';
+// import {
+//   updateCocktailForm
+// } from './update_cocktail_form.js';
 
-export const editCocktailToggle = () => {
-  // DECLARE VARIABLES
-  const editBtn = document.querySelector('#edit-cocktail-btn');
-  const saveBtn = document.querySelector('#save-cocktail-btn');
-  const destroyBtn = document.querySelector('#destroy-cocktail-btn');
+// export const editCocktailToggle = () => {
+//   // DECLARE VARIABLES
+//   const editBtn = document.querySelector('#edit-cocktail-btn');
+//   const saveBtn = document.querySelector('#save-cocktail-btn');
+//   const destroyBtn = document.querySelector('#destroy-cocktail-btn');
 
 
-  // EVENT LISTENER ON EDIT BTN
-  editBtn.addEventListener( 'click', (event) => {
-      updateCocktailForm();
+//   // EVENT LISTENER ON EDIT BTN
+//   editBtn.addEventListener( 'click', (event) => {
+//       updateCocktailForm();
 
-    // // DEFAULT ACTIONS
-    // createDoseModal();
-    // updateCocktailModals();
-    // event.preventDefault();
+//     // // DEFAULT ACTIONS
+//     // createDoseModal();
+//     // updateCocktailModals();
+//     // event.preventDefault();
 
-    // // TOGGLE UPDATE COCKTAIL VISIBILITY
-    // updateCocktailHoverable();
+//     // // TOGGLE UPDATE COCKTAIL VISIBILITY
+//     // updateCocktailHoverable();
 
-    // // TOGGLE UPDATE INGREDIENTS VISIBILITY
-    // updateIngredientsHidden();
+//     // // TOGGLE UPDATE INGREDIENTS VISIBILITY
+//     // updateIngredientsHidden();
 
-    // // TOGGLE EDIT BTN TEXT
-    // if (editBtn.text === 'EDIT COCKTAIL') {
-    //   editBtn.text = 'SAVE COCKTAIL';
-    // } else {
-    //   editBtn.text = 'EDIT COCKTAIL';
-    // }
+//     // // TOGGLE EDIT BTN TEXT
+//     // if (editBtn.text === 'EDIT COCKTAIL') {
+//     //   editBtn.text = 'SAVE COCKTAIL';
+//     // } else {
+//     //   editBtn.text = 'EDIT COCKTAIL';
+//     // }
 
-    // CHANGE THE BTNS
-    editBtn.parentElement.classList.add('hidden');
-    saveBtn.parentElement.classList.remove('hidden');
-    destroyBtn.parentElement.classList.remove('hidden');
-  });
-}
+//     // CHANGE THE BTNS
+//     editBtn.parentElement.classList.add('hidden');
+//     saveBtn.parentElement.classList.remove('hidden');
+//     destroyBtn.parentElement.classList.remove('hidden');
+//   });
+// }
