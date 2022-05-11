@@ -5,7 +5,8 @@
 
   <div class='cocktail-btns'>
     <div class="edit-cocktail">
-      <%= link_to 'EDIT COCKTAIL', '#',
+      <%= link_to 'EDIT COCKTAIL',
+        '#',
         class: 'btn btn-main btn-lg',
         id: 'edit-cocktail-btn' %>
     </div>
@@ -14,16 +15,18 @@
     <div class="save-cocktail hidden">
       <%= link_to 'SAVE COCKTAIL', 
         cocktail_path(@cocktail.id),
-        method: :put,
+        method: "put",
         class: 'btn btn-main btn-lg',
-        id: 'save-cocktail-btn',
-        remote: true %>
+        id: 'save-cocktail-btn' %>
     </div>
     <div class="destroy-cocktail hidden">
       <%= link_to 'DELETE COCKTAIL',
-        '#',
+        @cocktail,
+        method: "delete",
         class: 'btn btn-main btn-lg',
-        id: 'destroy-cocktail-btn' %>
+        id: 'destroy-cocktail-btn',
+        confirm: "ARE YOU SURE?",
+        remote: true %>
     </div>
   </div>
 
@@ -96,7 +99,7 @@
 </section>
 
 <div class="form edit-cocktail-form hidden">
-  <%= render 'form',
+  <%= render 'form-update',
         cocktail: @cocktail %>
 </div>
 <div class="form new-dose-form hidden">
