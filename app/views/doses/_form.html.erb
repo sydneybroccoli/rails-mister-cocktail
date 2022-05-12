@@ -1,41 +1,48 @@
-<div class="new-ingredient-form">
-  <br><br>
-  <%= simple_form_for [ cocktail, dose ] do |f| %>
-    <div class="cocktail-ingredient-form">
-      <div class="cocktail-ingredient-row">
-        <div class="nif-dose">
-          <%= f.input :description,
+<%= javascript_include_tag('') %>
+
+<div class="dose-ingredient-form form">
+  <%= simple_form_for [ cocktail, dose ], remote: true do |f| %>
+
+    <div class="form-row">
+      <div class="dif-dose">
+        <%= f.input :description,
             label: 'DOSE',
             placeholder: '1.0 CUPS...',
-            input_html: {
-              value: '',
-              id: '' } %>
-        </div>
-        <div class="nif-ingredient">
-          <%= f.association :ingredient,
+            value: '',
+            class: 'dif-dose-description',
+            id: '' %>
+      </div>
+
+      <div class="dif-ingredient">
+        <%= f.association :ingredient,
             label: 'INGREDIENT',
             collection: Ingredient.order('name'),
-            input_html: {
-              id: '' } %>
-        </div>
-        <%#= link_to icon('fas', 'minus-circle',
+            class: 'dif-ingredient-description',
+            id: '' %>
+      </div>
+      <%#= link_to icon('fas', 'minus-circle',
               class: 'fa-lg text-danger',
               style: 'font-size:20px;opacity:0.5;',
               id: 'removeButton'),
           '#',
-          class: 'nif-rmBtn' %>
+          class: '',
+          id: 'nif-rm-btn' %>
       </div>
-      <%#= link_to icon('fas', 'plus',
+      <div class="form-row">
+        <%#= link_to icon('fas', 'plus',
             class: 'fa-lg text-success nif-addBtn',
             style: 'font-size:20px;opacity:0.5;',
             id: 'addButton') + ' ADD ANOTHER INGREDIENT',
-            '#' %>
-    </div>
-    <br>
+            '#',
+            class: '',
+            id: '' %>
+      </div>
+
+      <br>
       <%= f.button :submit,
-            "ADD DOSE/INGREDIENT",
-            class: 'btn',
+            "ADD INGREDIENT",
+            class: 'form-btn',
             id: 'nif-submit' %>
-    </div>
+
   <% end %>
 </div>

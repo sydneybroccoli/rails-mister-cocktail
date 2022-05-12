@@ -1,0 +1,29 @@
+<section class="hero" id="edit-cocktail">
+  <div class="container" id="edit-cocktail-container">
+    
+    <div class="container nav-items">
+      <%= link_to '<< BACK TO HOME PAGE', root_path,
+        class: "nav-item", id: "btn-home" %><br>
+      <%= link_to '<< BACK TO ALL COCKTAILS', cocktails_path,
+        class: "nav-item", id: "btn-cocktails" %><br>
+      <%= link_to '<< BACK TO ' + @cocktail.name + ' PAGE', cocktail_path(@cocktail),
+        class: "nav-item", id: "btn-cocktail" %><br><br>
+      
+      <%= link_to 'DELETE COCKTAIL',
+        @cocktail,
+        method: :delete,
+        data: { confirm: "ARE YOU SURE?" },
+        class: 'btn btn-main text-danger btn-lg',
+        id: 'destroy-cocktail-btn' %>
+    </div>
+
+    <div class="container form-container" id="edit-cocktail-form">
+      <%= render 'form-update', cocktail: @cocktail %>
+    </div>
+
+    <div class="container form-container modal" id="new-dose-form">
+      <%= render '/doses/form', cocktail: @cocktail, dose: Dose.new  %>
+    </div>
+
+  </div>
+</section>

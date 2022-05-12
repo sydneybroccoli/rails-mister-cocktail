@@ -6,12 +6,12 @@
   grid-template-rows: auto auto 1fr auto;
   grid-template-areas:
     'header'
-    'edit'
+    'btns'
     'content'
     'footer';
 
   .nav-header { grid-area: header; }
-  .edit-cocktail { grid-area: edit; }
+  .cocktail-btns { grid-area: btns; }
   .cocktail-container { grid-area: content; }
   .nav-footer { grid-area: footer; }
 }
@@ -64,4 +64,7 @@
 }
 
 .hidden { display: none !important; }
+.hoverable {
+  &:hover { opacity: 0.5; }
+}
 

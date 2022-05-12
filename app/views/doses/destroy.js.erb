@@ -1,0 +1,11 @@
+function updateIngredients_REMOVE( id ){
+  var ul = document.querySelector('#cocktail_ingredients_list');
+  var li = ul.querySelector(`li#dose-${id}`);
+  li.remove();
+}
+
+updateIngredients_REMOVE( <%= @dose.id %> );
+
+
+
+

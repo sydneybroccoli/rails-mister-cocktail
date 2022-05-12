@@ -8,18 +8,25 @@ class DosesController < ApplicationController
   def create
     @dose = Dose.new( dose_params )
     @dose.cocktail_id = @cocktail.id
-
     if @dose.save
-      redirect_to cocktail_path(id: params[:cocktail_id])
-    else
-      render 'new'
-    end
+      respond_to do |format|
+        format.html { redirect_to edit_cocktail_path(@cocktail) }
+        format.js 
+      end
+    # else
+    end    
   end
 
   def destroy
     @dose = Dose.find(params[:id])
-    @dose.destroy
-    redirect_to cocktail_path(params[:cocktail_id])
+    if @dose.destroy
+      respond_to do |format|
+        format.html { redirect_to edit_cocktail_path(@cocktail) }
+        format.js 
+      end
+    # else
+    end
+
   end
 
   private

@@ -1,0 +1,62 @@
+<%= javascript_include_tag('') %>
+
+<div class="form form-cocktail-new">
+  <%= simple_form_for Cocktail.new do |f| %>
+    <%= f.input :name,
+      label: 'COCKTAIL NAME',
+      html: { 
+        class: 'cocktail-name' },
+      input_html: {
+        class: 'cocktail-name cf-option',
+        id: 'cf-name' },
+      placeholder: 'COCKTAIL NAME' %>
+
+    <%= f.input :thumbnail_url,
+      label: 'COCKTAIL IMAGE',
+      html: { 
+        class: 'cocktail-img' },
+      input_html: {
+        class: 'cocktail-img cf-option',
+        id: 'cf-name' },
+      placeholder: 'COCKTAIL THUMBNAIL URL' %>
+
+    <%= f.input :alcoholic,
+      collection: Cocktail::ALCOHOLIC,
+      label: '(NON) ALCOHOLIC?',
+      html: { 
+        class: 'cocktail-alcoholic' },
+      input_html: {
+        class: 'cocktail-alcoholic cf-option',
+        id: 'cf-name' }  %>
+
+    <%= f.input :glass,
+      collection: Cocktail::GLASS,
+      label: 'COCKTAIL GLASS',
+      html: { 
+        class: 'cocktail-glass' },
+      input_html: {
+        class: 'cocktail-glass cf-option',
+        id: 'cf-name' } %>
+
+    <%= f.text_area :instructions,
+      label: 'INSTRUCTIONS',
+      html: { 
+        class: 'cocktail-instructions' },
+      input_html: {
+        class: 'cocktail-instructions cf-option',
+        id: 'cf-name' },
+      placeholder: 'INSTRUCTIONS...' %>
+
+    <br>
+    <div class="new-cocktail-warning">
+      <p>DON'T WORRY. YOU CAN ADD INGREDIENTS LATER!</p>
+    </div>
+    <br>
+
+    <%= f.submit 'CREATE NEW COCKTAIL!',
+      class: 'cf-submit',
+      id: 'btn-create-cocktail ncf-submit'  %>
+
+  <% end %>
+
+</div>

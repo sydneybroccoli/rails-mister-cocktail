@@ -1,0 +1,11 @@
+function updateIngredients_ADD( id ){
+  // DEFINE VARIABLES
+  var ingredientsDIV = document.querySelector('div#ingredients-list');
+  var ingredientHTML = '<%= j render "./doses/list" %>';
+
+  ingredientsDIV.innerHTML = ingredientHTML;
+
+  console.log('CREATED DOSE # ' + id);
+}
+
+updateIngredients_ADD( <%= @dose.id %> );
