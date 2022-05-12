@@ -2,53 +2,107 @@
 
 <div class="form form-cocktail-update">
   <%= simple_form_for @cocktail do |f| %>
-    <%= f.input :name,
-      label: 'COCKTAIL NAME',
-      name: 'cocktail[name]',
-      html: { 
-        class: 'cocktail-name' },
-      input_html: {
-        class: 'cocktail-name cf-option',
-        id: 'cf-name' },
-      placeholder: 'COCKTAIL NAME' %>
 
-    <%= f.input :thumbnail_url,
-      label: 'COCKTAIL IMAGE',
-      html: { 
-        class: 'cocktail-img' },
-      input_html: {
-        class: 'cocktail-img cf-option',
-        id: 'cf-name' },
-      placeholder: 'COCKTAIL THUMBNAIL URL' %>
+    <div class="cocktail-form">
+      <% if @cocktail.thumbnail_url.nil? %>
+        <%= image_tag 'https://images.pexels.com/photos/605408/pexels-photo-605408.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+          alt:'placeholder thumbnail' %>
+      <% else %>
+        <%= image_tag @cocktail.thumbnail_url,
+          alt:"#{@cocktail.name} cocktail thumbnail" %>
+      <% end %>
 
-    <%= f.input :alcoholic,
-      collection: Cocktail::ALCOHOLIC,
-      label: '(NON) ALCOHOLIC?',
-      html: { 
-        class: 'cocktail-alcoholic' },
-      input_html: {
-        class: 'cocktail-alcoholic cf-option',
-        id: 'cf-name' }  %>
+      <%= f.input :thumbnail_url,
+        label: false,
+        html: { 
+          class: 'cocktail-img' },
+        input_html: {
+          class: 'cocktail-img cf-option',
+          id: 'cf-name' },
+        placeholder: 'COCKTAIL THUMBNAIL URL' %>
 
-    <%= f.input :glass,
-      collection: Cocktail::GLASS,
-      label: 'COCKTAIL GLASS',
-      html: { 
-        class: 'cocktail-glass' },
-      input_html: {
-        class: 'cocktail-glass cf-option',
-        id: 'cf-name' } %>
+      <%= f.input :name,
+        label: 'COCKTAIL NAME',
+        name: 'cocktail[name]',
+        html: { 
+          class: 'cocktail-name' },
+        input_html: {
+          class: 'cocktail-name cf-option',
+          id: 'cf-name' },
+        placeholder: 'COCKTAIL NAME' %>
 
-    <div class="form-group cocktail_instructions">
-    <%= f.text_area :instructions,
-      label: 'INSTRUCTIONS',
-      html: { 
-        class: 'cocktail-instructions' },
-      input_html: {
-        class: 'cocktail-instructions cf-option',
-        id: 'cf-name' },
-      placeholder: 'INSTRUCTIONS...' %>
+      <%= f.input :alcoholic,
+        collection: Cocktail::ALCOHOLIC,
+        label: '(NON) ALCOHOLIC?',
+        html: { 
+          class: 'cocktail-alcoholic' },
+        input_html: {
+          class: 'cocktail-alcoholic cf-option',
+          id: 'cf-name' }  %>
+
+      <%= f.input :glass,
+        collection: Cocktail::GLASS,
+        label: 'COCKTAIL GLASS',
+        html: { 
+          class: 'cocktail-glass' },
+        input_html: {
+          class: 'cocktail-glass cf-option',
+          id: 'cf-name' } %>
+
+      <div class="form-group cocktail_instructions">
+        <label for="cocktail-instructions">INSTRUCTIONS</label>
+      <%= f.text_area :instructions,
+        label: 'INSTRUCTIONS',
+        html: { 
+          class: 'cocktail-instructions' },
+        input_html: {
+          class: 'cocktail-instructions cf-option',
+          id: 'cf-name' },
+        placeholder: 'INSTRUCTIONS...' %>
+      </div>
     </div>
+
+    <div class="ingredients-form">
+      <div class="cocktail-ingredients">
+        <label for="cocktail-ingredients">INGREDIENTS</label>
+        <ul class="list-group list-group-flush">
+          <% @cocktail.doses.each do |dose| %>
+            <li class="list-group-item d-flex justify-content-between ingredient-item">
+              <div class="info">
+                <%= dose.description %>
+                <span><strong>
+                  <%= Ingredient.find(dose.ingredient_id).name %>
+                </strong></span>
+              </div>
+              <div class="delete-icon">
+                <%= link_to icon(
+                    'fas', 'minus-circle',
+                    class: 'cocktail-ingredient-rm fa-lg text-danger',
+                    style: 'font-size:20px;opacity:0.5;',
+                    id: 'removeButton'),
+                  cocktail_dose_path(
+                cocktail_id: @cocktail.id,
+                id: dose.id ),
+              method: :delete,
+              data: { confirm: 'ARE YOU SURE?'} %>
+              </div>
+            </li>
+          <% end %>
+          <li class="list-group-item d-flex justify-content-center center ingredient-item"
+            id="new-ingredient-item">
+            <%= link_to icon('fas', 'plus',
+              class: 'fa-lg text-success',
+              style: 'font-size:20px;opacity:0.5;',
+              id: 'addButton') + ' ADD ANOTHER INGREDIENT',
+              '#',
+              id: 'new-dose-modal-btn' %>
+            
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <br><br>
 
     <%= f.submit 'UPDATE COCKTAIL',
       class: 'cf-submit',
