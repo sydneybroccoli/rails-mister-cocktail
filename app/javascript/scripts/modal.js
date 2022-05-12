@@ -1,7 +1,7 @@
 export const modalAction = ( modal, open ) => {
   open.addEventListener( 'click', (event) => {
     // DECLARE VARIABLES
-    var close = modal.querySelector('.close-btn');
+    // var close = modal.querySelector('.close-btn');
     var submit = modal.querySelector('.form-btn');
 
     // OPEN MODAL

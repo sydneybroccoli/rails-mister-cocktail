@@ -21,8 +21,8 @@
       <%= render 'form-update', cocktail: @cocktail %>
     </div>
 
-    <div class="container form-container modal hidden" id="new-ingredient-form">
-      
+    <div class="container form-container modal hidden" id="new-dose-form">
+      <%= render '/doses/form', cocktail: @cocktail, dose: Dose.new  %>
     </div>
 
   </div>

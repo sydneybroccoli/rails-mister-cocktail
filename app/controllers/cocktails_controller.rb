@@ -43,7 +43,8 @@ class CocktailsController < ApplicationController
   def new_dose
     respond_to do |format|
       format.html
-      format.javascripts
+      format.json
+      format.js
     end
   end
 

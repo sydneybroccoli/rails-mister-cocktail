@@ -2,10 +2,13 @@
 //   updateCocktailModals,
 //   updateCocktailHoverable
 // } from './update_cocktail.js';
-// import {
-//   createDoseModal,
-//   updateIngredientsHidden
-// } from './update_ingredients.js';
+import {
+  updateIngredients_MODAL,
+  updateIngredients_DELETE
+} from './update_ingredients.js';
+
+
+updateIngredients_DELETE();
 
 // import {
 //   updateCocktailForm
@@ -36,3 +39,11 @@
 //     destroyBtn.parentElement.classList.remove('hidden');
 //   });
 // }
+
+export const updateCocktailForm_deleteIngredient = () => {
+
+}
+
+export const updateCocktailForm_newIngrendient = () => {
+
+}
