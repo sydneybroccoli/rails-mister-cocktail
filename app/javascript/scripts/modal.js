@@ -11,10 +11,10 @@ export const modalAction = ( modal, open ) => {
     if ( modal.style.display == 'block' ) {
       console.log('modal open');
 
-      // using 'X'
-      close.addEventListener( 'click', () => {
-        modal.style.display = 'none';
-      }); // END OF close EVENT LISTENER
+      // // using 'X'
+      // close.addEventListener( 'click', () => {
+      //   modal.style.display = 'none';
+      // }); // END OF close EVENT LISTENER
 
       // clicking outside modal-content
       window.addEventListener('click', (event) => {

@@ -1,0 +1,39 @@
+<div class="cocktail-ingredients">
+  <label for="cocktail-ingredients">INGREDIENTS</label>
+  <ul class="list-group list-group-flush" id="cocktail_ingredients_list">
+    <% @cocktail.doses.each do |dose| %>
+      <li class="list-group-item d-flex justify-content-between ingredient-item"
+      id="dose-<%= dose.id %>">
+        <div class="info">
+          <%= dose.description %>
+          <span><strong>
+            <%= Ingredient.find(dose.ingredient_id).name %>
+          </strong></span>
+        </div>
+        <div class="delete-icon">
+          <%= link_to icon(
+              'fas', 'minus-circle',
+              class: 'cocktail-ingredient-rm fa-lg text-danger',
+              style: 'font-size:20px;opacity:0.5;',
+              id: 'removeButton'),
+            cocktail_dose_path(
+          cocktail_id: @cocktail.id, id: dose.id),
+          id: "dose-#{dose.id}-rm",
+        method: :delete,
+        remote: true,
+        data: { confirm: 'ARE YOU SURE?'} %>
+        </div>
+      </li>
+    <% end %>
+    <li class="list-group-item d-flex justify-content-center center ingredient-item"
+      id="new-ingredient-item">
+      <%= link_to icon('fas', 'plus',
+        class: 'fa-lg text-success',
+        style: 'font-size:20px;opacity:0.5;',
+        id: 'addButton') + ' ADD ANOTHER INGREDIENT',
+        '#',
+        id: 'new-dose-modal-btn' %>
+      
+    </li>
+  </ul>
+</div>

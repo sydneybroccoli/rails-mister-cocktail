@@ -52,12 +52,3 @@ const updateCocktailForm_INSERT = ( item, fitems ) => {
   item.append(fitem);
 
 } // END OF updateCocktailForm_INSERT
-
-// export const updateCocktailForm_SUBMIT = ( btn, form ) => {
-
-// } // END OF updateCocktailForm_SUBMIT
-
-// export const updateCocktailForm_DELETE = ( btn, form ) => {
-
-// } // END OF updateCocktailForm_DELETE
-

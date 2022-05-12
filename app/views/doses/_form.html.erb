@@ -1,7 +1,7 @@
 <%= javascript_include_tag('') %>
 
 <div class="dose-ingredient-form form">
-  <%= simple_form_for [ cocktail, dose ] do |f| %>
+  <%= simple_form_for [ cocktail, dose ], remote: true do |f| %>
 
     <div class="form-row">
       <div class="dif-dose">

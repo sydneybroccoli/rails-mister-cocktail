@@ -80,12 +80,3 @@
     <%= render partial: 'shared/footer', layout: 'layouts/banner' %>
   </div>
 </section>
-
-<div class="form edit-cocktail-form ">
-  <%= render 'form-update',
-        cocktail: @cocktail %>
-</div>
-<div class="form new-dose-form hidden">
-  <%= render 'doses/form',
-      cocktail: @cocktail, dose: @dose %>
-</div>

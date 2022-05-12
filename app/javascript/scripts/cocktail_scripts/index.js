@@ -1,14 +1,24 @@
-// import {
-//   updateCocktailModals,
-//   updateCocktailHoverable
-// } from './update_cocktail.js';
+import {
+  updateCocktail_BTN
+} from './update_cocktail.js'
+
 import {
   updateIngredients_MODAL,
   updateIngredients_DELETE
 } from './update_ingredients.js';
 
+updateCocktail_BTN();
 
-updateIngredients_DELETE();
+const updateIngredients = () => {
+  // DECLARE VARIABLES
+  const modal = document.querySelector('.modal#new-dose-modal');
+  const modalBTN = document.querySelector('li#new-ingredient-item');
+
+  updateIngredients_MODAL( modalBTN, modal );
+  //updateIngredients_DELETE();
+}
+
+updateIngredients();
 
 // import {
 //   updateCocktailForm
@@ -39,11 +49,3 @@ updateIngredients_DELETE();
 //     destroyBtn.parentElement.classList.remove('hidden');
 //   });
 // }
-
-export const updateCocktailForm_deleteIngredient = () => {
-
-}
-
-export const updateCocktailForm_newIngrendient = () => {
-
-}

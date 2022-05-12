@@ -5,6 +5,18 @@ export const updateIngredients_MODAL = () => {
   const doseModal = document.querySelector('#new-dose-form');
   const doseModalBtn = document.querySelector('#new-dose-modal-btn');
   modalAction(doseModal, doseModalBtn);
+
+  const submit = document.querySelector('#nif-submit');
+  const ingredients = document.querySelector('.cocktail-ingredients');
+
+  // CLOSE MODAL ON SUCCESS
+  submit.addEventListener( 'click', () => {
+    doseModal.style.display = 'none';
+  
+  // "REFRESH" INGREDIENTS LIST
+  
+  })
+
 }
 
 export const updateIngredients_DELETE = () => {
@@ -17,9 +29,6 @@ export const updateIngredients_DELETE = () => {
   });
 }
 
-export const updateIngredients_ADD = () => {
-
-}
 
 export const updateIngredientsHidden = () => {
   // DECLARE VARIABLES
