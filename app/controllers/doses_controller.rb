@@ -5,6 +5,14 @@ class DosesController < ApplicationController
     @dose = Dose.new
   end
 
+  def show
+    @doses = Dose.order(created_at: :desc).page(params[:page]).per(params[:limit])
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
   def create
     @dose = Dose.new( dose_params )
     @dose.cocktail_id = @cocktail.id
