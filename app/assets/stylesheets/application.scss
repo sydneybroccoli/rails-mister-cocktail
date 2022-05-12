@@ -12,6 +12,8 @@
 @import "components/index";
 @import "pages/index";
 
+@import "pagination_override";
+
 html, body {
   background-color: $light-accent;
 }
