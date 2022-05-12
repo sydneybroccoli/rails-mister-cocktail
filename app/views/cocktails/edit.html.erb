@@ -13,12 +13,16 @@
         @cocktail,
         method: :delete,
         data: { confirm: "ARE YOU SURE?" },
-        class: 'btn btn-main btn-lg',
+        class: 'btn btn-main text-danger btn-lg',
         id: 'destroy-cocktail-btn' %>
     </div>
 
     <div class="container form-container" id="edit-cocktail-form">
       <%= render 'form-update', cocktail: @cocktail %>
+    </div>
+
+    <div class="container form-container modal hidden" id="new-ingredient-form">
+      
     </div>
 
   </div>
