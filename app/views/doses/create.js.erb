@@ -1,7 +1,7 @@
 function updateIngredients_ADD( id ){
   // DEFINE VARIABLES
-  var ingredientsDIV = document.querySelector('div.ingredients-show');
-  var ingredientHTML = '<%= j render "./doses/show" %>';
+  var ingredientsDIV = document.querySelector('div#ingredients-list');
+  var ingredientHTML = '<%= j render "./doses/list" %>';
 
   ingredientsDIV.innerHTML = ingredientHTML;
 

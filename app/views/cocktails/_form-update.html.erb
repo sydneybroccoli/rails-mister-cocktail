@@ -63,7 +63,26 @@
     </div>
 
     <div class="ingredients-show">
-      <%= render './doses/show'  %>
+      <div class="cocktail-ingredients">
+        <label for="cocktail-ingredients">INGREDIENTS</label>
+        <ul class="list-group list-group-flush" id="cocktail_ingredients_list">
+
+          <div id="ingredients-list">
+            <%= render './doses/list'  %>
+          </div>
+
+          <li class="list-group-item d-flex justify-content-center center ingredient-item"
+            id="new-ingredient-item">
+            <%= link_to icon('fas', 'plus',
+              class: 'fa-lg text-success',
+              style: 'font-size:20px;opacity:0.5;',
+              id: 'addButton') + ' ADD ANOTHER INGREDIENT',
+                  '#',
+              id: 'new-dose-modal-btn' %>
+                
+          </li>
+        </ul>
+      </div>
     </div>
 
     <br><br>
