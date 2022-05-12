@@ -1,13 +1,10 @@
-const ingredientsUL = document.querySelector('#cocktail_ingredients_list');
-const ingredientID = <%= @dose.id %>;
-
-
-const updateIngredients_REMOVE = ( ul, id ) => {
-  let li = ul.querySelector(`li#dose-${id}`);
+function updateIngredients_REMOVE( id ){
+  var ul = document.querySelector('#cocktail_ingredients_list');
+  var li = ul.querySelector(`li#dose-${id}`);
   li.remove();
 }
 
-updateIngredients_REMOVE( ingredientsUL, ingredientID );
+updateIngredients_REMOVE( <%= @dose.id %> );
 
 
 
