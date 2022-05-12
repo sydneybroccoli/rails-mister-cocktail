@@ -22,7 +22,9 @@ import 'jquery';
 import 'bootstrap';
 
 // IMPORT SCRIPTS
-import { editCocktailToggle } from '../scripts/cocktail_scripts/index.js';
+import {
+  updateCocktail
+} from '../scripts/cocktail_scripts/index.js';
 
 // EXECUTE SCRIPTS
   // DEVELOPMENT MODE?
@@ -46,10 +48,15 @@ const myInitCode = () => {
     // ACTIONS FOR SHOW PAGES
     case (/^\/cocktails\/\d+$/i).test(page):
       console.log('show scripts running...');
-      editCocktailToggle();
+      break;
+    // ACTIONS FOR EDIT PAGES
+    case(/^\/cocktails\/\d\/edit$/i).test(page):
+      console.log('edit scripts running...');
+      updateCocktail();
       break;
     default:
       console.log('no scripts for this page...');
+
   }
 };
 
