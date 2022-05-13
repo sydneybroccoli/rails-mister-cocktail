@@ -1,11 +1,20 @@
 class CocktailsController < ApplicationController
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.order(created_at: :desc).page(params[:page]).per(2000)
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def show
     @cocktail = Cocktail.find(params[:id])
-    @dose = Dose.new
+    if @cocktail.doses
+      @doses = @cocktail.doses.page(params[:page]).per(10)
+    else
+      @dose = Dose.new
+    end
+
   end
 
   def new

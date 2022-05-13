@@ -42,8 +42,9 @@
     </div>
 
     <div class="cocktail-ingredients">
+      <%= paginate @doses %>
       <ul class="list-group list-group-flush">
-        <% @cocktail.doses.each do |dose| %>
+        <% @doses.each do |dose| %>
         <li class="list-group-item d-flex justify-content-between ingredient-item">
           <div class="info">
             <%= dose.description %>

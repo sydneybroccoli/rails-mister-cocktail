@@ -8,5 +8,7 @@ class Dose < ApplicationRecord
   #   message: 'cannot use an ingredient multiple times for one cocktail'
   # }
 
+  
+
   DOSES = []
 end

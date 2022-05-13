@@ -4,6 +4,9 @@ class Cocktail < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
+  paginates_per 20
+  max_paginates_per 1000
+
   ALCOHOLIC = [
     'Alcoholic', 
     'Virgin/Non-Alcoholic', 
