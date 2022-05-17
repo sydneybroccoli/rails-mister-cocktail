@@ -65,3 +65,5 @@ gem 'faker'
 gem 'popper_js', '~> 1.14.5'
 gem 'pg_search'
 gem 'kaminari'
+
+gem 'bullet', group: 'development'

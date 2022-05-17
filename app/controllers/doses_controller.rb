@@ -6,7 +6,8 @@ class DosesController < ApplicationController
   end
 
   def show
-    @doses = Dose.order(created_at: :desc).page(params[:page]).per(params[:limit])
+    @doses = Dose
+      .order(created_at: :desc).page(params[:page]).per(params[:limit])
     respond_to do |format|
       format.js
       format.html
