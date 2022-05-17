@@ -48,7 +48,7 @@
         <li class="list-group-item d-flex justify-content-between ingredient-item">
           <div class="info">
             <%= dose.description %>
-            <span><strong><%= Ingredient.find(dose.ingredient_id).name %></strong></span>
+            <span><strong><%= dose.ingredient.name %></strong></span>
           </div>
           <div class="delete-icon hidden">
             <%= link_to icon('fas', 'minus-circle',
