@@ -2,10 +2,9 @@ class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail
       .includes(:doses, :ingredients)
-    @cocktails_paginated = Kaminari
-      .paginate_array(@cocktails)
+      .order(created_at: :desc)
       .page(params[:page])
-      .per(2000)
+      .per(20)
 
     respond_to do |format|
       format.js
@@ -18,10 +17,8 @@ class CocktailsController < ApplicationController
     if @cocktail.doses
       @doses = @cocktail.doses
         .includes(:ingredient)
-      @doses_paginated = Kaminari
-        .paginate_array(@doses)
         .page(params[:page])
-        .per(10)
+        .per(5)
     else
       @dose = Dose.new
     end
