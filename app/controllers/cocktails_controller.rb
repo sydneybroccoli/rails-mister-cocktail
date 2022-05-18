@@ -4,7 +4,6 @@ class CocktailsController < ApplicationController
       .includes(:doses, :ingredients)
     @cocktails_paginated = Kaminari
       .paginate_array(@cocktails)
-      .order(created_at: :desc)
       .page(params[:page])
       .per(2000)
 
