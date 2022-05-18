@@ -8,7 +8,8 @@ class Dose < ApplicationRecord
   #   message: 'cannot use an ingredient multiple times for one cocktail'
   # }
 
-  
+  paginates_per 10
+  max_paginates_per 1000
 
   DOSES = []
 end

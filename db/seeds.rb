@@ -8,7 +8,7 @@ Dose.destroy_all
 
 puts 'Creating new database...'
 
-60.times do
+100.times do
   # PARSE JSON
   url = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
   puts "Fetching cocktail..."
